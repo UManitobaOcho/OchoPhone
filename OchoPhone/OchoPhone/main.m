@@ -2,8 +2,6 @@
 //  main.m
 //  OchoPhone
 //
-//  Created by Junjie Huang on 1/16/2014.
-//	Updated by KING OF KINGS 1/1/111
 //  Copyright (c) 2014 UManitobaOcho. All rights reserved.
 //
 
