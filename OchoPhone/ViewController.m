@@ -19,25 +19,26 @@
     [super viewDidLoad];
     NSLog(@"loaded the view");
     _socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [_socketIO connectToHost:@"localhost" onPort:3000];
-    [_socketIO sendEvent:@"connect" withData:@"iOSuser"];
+    [_socketIO connectToHost:@"ec2-54-201-56-122.us-west-2.compute.amazonaws.com" onPort:3000];
+    [_socketIO sendEvent:@"connection" withData:@"iOSuser"];
 }
 
 - (void) socketIODidConnect:(SocketIO *)socket
 {
     NSLog(@"socket.io connected.");
+    [_socketIO sendEvent:@"testios" withData:@"test"];
 }
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
     NSLog(@"didReceiveEvent()");
     
-    if([packet.name isEqualToString:@"message"])
+    if([packet.name isEqualToString:@"test"])
     {
         NSArray* args = packet.args;
         NSDictionary* arg = args[0];
         
-        _msgLog.text = [_msgLog.text stringByAppendingFormat:@"%@\n",arg[@"message"]];
+        _msgLog.text = [_msgLog.text stringByAppendingFormat:@"%@\n",arg[@"test"]];
         
     }
 }
