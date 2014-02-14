@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0394F1ED18A1D73400B2BABF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394F1EC18A1D73400B2BABF /* ViewController.m */; };
-		039FDFCC18A3F35A00C628F5 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FD94D18A3F34700C628F5 /* SocketIO.m */; };
 		039FDFCD18A3F35A00C628F5 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FD94F18A3F34700C628F5 /* SocketIOJSONSerialization.m */; };
 		039FDFCE18A3F35A00C628F5 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FD95118A3F34700C628F5 /* SocketIOPacket.m */; };
 		039FDFCF18A3F35A00C628F5 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FD95418A3F34700C628F5 /* SocketIOTransportWebsocket.m */; };
@@ -20,6 +19,7 @@
 		039FE5BE18A3F6FC00C628F5 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FE5B918A3F6FB00C628F5 /* NSData+SRB64Additions.m */; };
 		039FE5BF18A3F6FC00C628F5 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FE5BC18A3F6FC00C628F5 /* SRWebSocket.m */; };
 		039FE5C818A403D100C628F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039FE5C718A403D100C628F5 /* Main.storyboard */; };
+		F44A6A1D18AEE1E60046C905 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 039FD94D18A3F34700C628F5 /* SocketIO.m */; };
 		F46D9A661888C80D00500C09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46D9A651888C80D00500C09 /* Foundation.framework */; };
 		F46D9A681888C80D00500C09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46D9A671888C80D00500C09 /* CoreGraphics.framework */; };
 		F46D9A6A1888C80D00500C09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46D9A691888C80D00500C09 /* UIKit.framework */; };
@@ -156,6 +156,14 @@
 			path = SocketRocket/SocketRocket;
 			sourceTree = "<group>";
 		};
+		F44A6A1C18AEE1220046C905 /* socket.IO-objc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "socket.IO-objc";
+			path = "extern/socket.IO-objc";
+			sourceTree = "<group>";
+		};
 		F46D9A591888C80D00500C09 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +187,7 @@
 		F46D9A641888C80D00500C09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F44A6A1C18AEE1220046C905 /* socket.IO-objc */,
 				039FE57718A3F69800C628F5 /* Security.framework */,
 				039FE57518A3F68E00C628F5 /* libicucore.dylib */,
 				039FE57318A3F67D00C628F5 /* CFNetwork.framework */,
@@ -329,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44A6A1D18AEE1E60046C905 /* SocketIO.m in Sources */,
 				F46D9A761888C80D00500C09 /* AppDelegate.m in Sources */,
 				039FE5BE18A3F6FC00C628F5 /* NSData+SRB64Additions.m in Sources */,
 				039FDFD018A3F35A00C628F5 /* SocketIOTransportXHR.m in Sources */,
@@ -337,7 +347,6 @@
 				0394F1ED18A1D73400B2BABF /* ViewController.m in Sources */,
 				039FDFCE18A3F35A00C628F5 /* SocketIOPacket.m in Sources */,
 				039FDFCD18A3F35A00C628F5 /* SocketIOJSONSerialization.m in Sources */,
-				039FDFCC18A3F35A00C628F5 /* SocketIO.m in Sources */,
 				039FE5BD18A3F6FC00C628F5 /* base64.c in Sources */,
 				F46D9A721888C80D00500C09 /* main.m in Sources */,
 			);

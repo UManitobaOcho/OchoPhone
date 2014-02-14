@@ -2,7 +2,6 @@
 //  ViewController.m
 //  OchoPhone
 //
-//  Created by Nico on 2/4/2014.
 //  Copyright (c) 2014 UManitobaOcho. All rights reserved.
 //
 
@@ -19,7 +18,7 @@
     [super viewDidLoad];
     NSLog(@"loaded the view");
     _socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [_socketIO connectToHost:@"ec2-54-201-56-122.us-west-2.compute.amazonaws.com" onPort:3000];
+    [_socketIO connectToHost:@"ec2-54-201-56-122.us-west-2.compute.amazonaws.com" onPort:8080];
     [_socketIO sendEvent:@"connection" withData:@"iOSuser"];
 }
 
