@@ -1,0 +1,3 @@
+[submodule "OchoPhone/extern/socket.IO-objc"]
+	path = OchoPhone/extern/socket.IO-objc
+	url = https://github.com/pkyeck/socket.IO-objc.git/
