@@ -19,7 +19,11 @@
     [super viewDidLoad];
     NSLog(@"loaded the view");
     _socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [_socketIO connectToHost:@"localhost" onPort:3000];
+    [_socketIO connectToHost:@"localhost"
+                      onPort:8080
+                  withParams:nil
+            withCookieParams:[NSDictionary dictionaryWithObjectsAndKeys:@"express.sid", @"express.sid ", nil]
+     ];
     [_socketIO sendEvent:@"connect" withData:@"iOSuser"];
 }
 
@@ -32,13 +36,31 @@
 {
     NSLog(@"didReceiveEvent()");
     
-    if([packet.name isEqualToString:@"message"])
+    if([packet.name isEqualToString:@"connected"])
     {
         NSArray* args = packet.args;
         NSDictionary* arg = args[0];
         
-        _msgLog.text = [_msgLog.text stringByAppendingFormat:@"%@\n",arg[@"message"]];
+        _msgLog.text = [_msgLog.text stringByAppendingFormat:@"Status: %@",arg[@"connected"]];
         
+        [_socketIO sendEvent:@"getStudent" withData:@"none"];
+        
+    }
+    if([packet.name isEqualToString:@"foundStudent"])
+    {
+        NSArray* args = packet.args;
+        NSDictionary* arg = args[0];
+        
+        _msgLog.text = [_msgLog.text stringByAppendingFormat:@"\nUsername: %@",arg[@"username"]];
+        
+        [_socketIO sendEvent:@"getCourses" withData:@"none"];
+    }
+    if([packet.name isEqualToString:@"foundCourses"])
+    {
+        NSArray* args = packet.args;
+        NSDictionary* arg = args[0];
+        
+        _msgLog.text = [_msgLog.text stringByAppendingFormat:@"\n\nCourses: \n%@",arg[@"course_name"]];
     }
 }
 
