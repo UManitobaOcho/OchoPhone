@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		036704B818BD635600D2378F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704B718BD635600D2378F /* Foundation.framework */; };
+		036704BA18BD635600D2378F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704B918BD635600D2378F /* CoreGraphics.framework */; };
+		036704BC18BD635600D2378F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704BB18BD635600D2378F /* UIKit.framework */; };
+		036704C218BD635600D2378F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 036704C018BD635600D2378F /* InfoPlist.strings */; };
+		036704C418BD635600D2378F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704C318BD635600D2378F /* main.m */; };
+		036704C818BD635600D2378F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704C718BD635600D2378F /* AppDelegate.m */; };
+		036704CB18BD635600D2378F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036704C918BD635600D2378F /* Main.storyboard */; };
+		036704CE18BD635600D2378F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704CD18BD635600D2378F /* ViewController.m */; };
+		036704D018BD635600D2378F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036704CF18BD635600D2378F /* Images.xcassets */; };
+		036704D718BD635600D2378F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704D618BD635600D2378F /* XCTest.framework */; };
+		036704D818BD635600D2378F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704B718BD635600D2378F /* Foundation.framework */; };
+		036704D918BD635600D2378F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704BB18BD635600D2378F /* UIKit.framework */; };
+		036704E118BD635600D2378F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 036704DF18BD635600D2378F /* InfoPlist.strings */; };
+		036704E318BD635600D2378F /* OchoPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704E218BD635600D2378F /* OchoPadTests.m */; };
+		036704EE18BD68B400D2378F /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704ED18BD68B400D2378F /* CourseViewController.m */; };
+		036704F118BD691800D2378F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704F018BD691800D2378F /* Course.m */; };
+		036704F418BE414100D2378F /* CourseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704F318BE414100D2378F /* CourseDetailsViewController.m */; };
+		03670B7C18BE5F0000D2378F /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704FD18BE5EF500D2378F /* SocketIO.m */; };
+		03670B7D18BE5F0000D2378F /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704FF18BE5EF500D2378F /* SocketIOJSONSerialization.m */; };
+		03670B7E18BE5F0000D2378F /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0367050118BE5EF500D2378F /* SocketIOPacket.m */; };
+		03670B7F18BE5F0000D2378F /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0367050418BE5EF500D2378F /* SocketIOTransportWebsocket.m */; };
+		03670B8018BE5F0000D2378F /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 0367050618BE5EF500D2378F /* SocketIOTransportXHR.m */; };
+		036710D718BE5F0000D2378F /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 03670B3418BE5EFF00D2378F /* base64.c */; };
+		036710D818BE5F0000D2378F /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03670B3718BE5EFF00D2378F /* NSData+SRB64Additions.m */; };
+		036710D918BE5F0000D2378F /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 03670B3A18BE5EFF00D2378F /* SRWebSocket.m */; };
+		0367111F18BE610B00D2378F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367111E18BE610B00D2378F /* Security.framework */; };
+		0367112118BE612100D2378F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112018BE612100D2378F /* libicucore.dylib */; };
+		0367112318BE612A00D2378F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112218BE612A00D2378F /* CFNetwork.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		036704DA18BD635600D2378F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 036704AC18BD635600D2378F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 036704B318BD635600D2378F;
+			remoteInfo = OchoPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		036704B418BD635600D2378F /* OchoPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OchoPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		036704B718BD635600D2378F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		036704B918BD635600D2378F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		036704BB18BD635600D2378F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		036704BF18BD635600D2378F /* OchoPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OchoPad-Info.plist"; sourceTree = "<group>"; };
+		036704C118BD635600D2378F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		036704C318BD635600D2378F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		036704C518BD635600D2378F /* OchoPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OchoPad-Prefix.pch"; sourceTree = "<group>"; };
+		036704C618BD635600D2378F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		036704C718BD635600D2378F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		036704CA18BD635600D2378F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		036704CC18BD635600D2378F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		036704CD18BD635600D2378F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		036704CF18BD635600D2378F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		036704D518BD635600D2378F /* OchoPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OchoPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		036704D618BD635600D2378F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		036704DE18BD635600D2378F /* OchoPadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OchoPadTests-Info.plist"; sourceTree = "<group>"; };
+		036704E018BD635600D2378F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		036704E218BD635600D2378F /* OchoPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OchoPadTests.m; sourceTree = "<group>"; };
+		036704EC18BD68B400D2378F /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
+		036704ED18BD68B400D2378F /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
+		036704EF18BD691800D2378F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		036704F018BD691800D2378F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		036704F218BE414100D2378F /* CourseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailsViewController.h; sourceTree = "<group>"; };
+		036704F318BE414100D2378F /* CourseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailsViewController.m; sourceTree = "<group>"; };
+		036704FC18BE5EF500D2378F /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		036704FD18BE5EF500D2378F /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		036704FE18BE5EF500D2378F /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		036704FF18BE5EF500D2378F /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		0367050018BE5EF500D2378F /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		0367050118BE5EF500D2378F /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		0367050218BE5EF500D2378F /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		0367050318BE5EF500D2378F /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		0367050418BE5EF500D2378F /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		0367050518BE5EF500D2378F /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		0367050618BE5EF500D2378F /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		03670B3418BE5EFF00D2378F /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = base64.c; path = SocketRocket/base64.c; sourceTree = "<group>"; };
+		03670B3518BE5EFF00D2378F /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = base64.h; path = SocketRocket/base64.h; sourceTree = "<group>"; };
+		03670B3618BE5EFF00D2378F /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+SRB64Additions.h"; path = "SocketRocket/NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		03670B3718BE5EFF00D2378F /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+SRB64Additions.m"; path = "SocketRocket/NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		03670B3818BE5EFF00D2378F /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SocketRocket-Prefix.pch"; path = "SocketRocket/SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		03670B3918BE5EFF00D2378F /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+		03670B3A18BE5EFF00D2378F /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		0367111E18BE610B00D2378F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0367112018BE612100D2378F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		0367112218BE612A00D2378F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		036704B118BD635600D2378F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0367112318BE612A00D2378F /* CFNetwork.framework in Frameworks */,
+				0367112118BE612100D2378F /* libicucore.dylib in Frameworks */,
+				0367111F18BE610B00D2378F /* Security.framework in Frameworks */,
+				036704BA18BD635600D2378F /* CoreGraphics.framework in Frameworks */,
+				036704BC18BD635600D2378F /* UIKit.framework in Frameworks */,
+				036704B818BD635600D2378F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		036704D218BD635600D2378F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036704D718BD635600D2378F /* XCTest.framework in Frameworks */,
+				036704D918BD635600D2378F /* UIKit.framework in Frameworks */,
+				036704D818BD635600D2378F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		036704AB18BD635600D2378F = {
+			isa = PBXGroup;
+			children = (
+				036704F518BE5EF500D2378F /* extern */,
+				036704BD18BD635600D2378F /* OchoPad */,
+				036704DC18BD635600D2378F /* OchoPadTests */,
+				036704B618BD635600D2378F /* Frameworks */,
+				036704B518BD635600D2378F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		036704B518BD635600D2378F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				036704B418BD635600D2378F /* OchoPad.app */,
+				036704D518BD635600D2378F /* OchoPadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		036704B618BD635600D2378F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0367112218BE612A00D2378F /* CFNetwork.framework */,
+				0367112018BE612100D2378F /* libicucore.dylib */,
+				0367111E18BE610B00D2378F /* Security.framework */,
+				036704B718BD635600D2378F /* Foundation.framework */,
+				036704B918BD635600D2378F /* CoreGraphics.framework */,
+				036704BB18BD635600D2378F /* UIKit.framework */,
+				036704D618BD635600D2378F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		036704BD18BD635600D2378F /* OchoPad */ = {
+			isa = PBXGroup;
+			children = (
+				036704C618BD635600D2378F /* AppDelegate.h */,
+				036704C718BD635600D2378F /* AppDelegate.m */,
+				036704C918BD635600D2378F /* Main.storyboard */,
+				036704CC18BD635600D2378F /* ViewController.h */,
+				036704CD18BD635600D2378F /* ViewController.m */,
+				036704CF18BD635600D2378F /* Images.xcassets */,
+				036704BE18BD635600D2378F /* Supporting Files */,
+				036704EC18BD68B400D2378F /* CourseViewController.h */,
+				036704ED18BD68B400D2378F /* CourseViewController.m */,
+				036704EF18BD691800D2378F /* Course.h */,
+				036704F018BD691800D2378F /* Course.m */,
+				036704F218BE414100D2378F /* CourseDetailsViewController.h */,
+				036704F318BE414100D2378F /* CourseDetailsViewController.m */,
+			);
+			path = OchoPad;
+			sourceTree = "<group>";
+		};
+		036704BE18BD635600D2378F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				036704BF18BD635600D2378F /* OchoPad-Info.plist */,
+				036704C018BD635600D2378F /* InfoPlist.strings */,
+				036704C318BD635600D2378F /* main.m */,
+				036704C518BD635600D2378F /* OchoPad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		036704DC18BD635600D2378F /* OchoPadTests */ = {
+			isa = PBXGroup;
+			children = (
+				036704E218BD635600D2378F /* OchoPadTests.m */,
+				036704DD18BD635600D2378F /* Supporting Files */,
+			);
+			path = OchoPadTests;
+			sourceTree = "<group>";
+		};
+		036704DD18BD635600D2378F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				036704DE18BD635600D2378F /* OchoPadTests-Info.plist */,
+				036704DF18BD635600D2378F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		036704F518BE5EF500D2378F /* extern */ = {
+			isa = PBXGroup;
+			children = (
+				036704F618BE5EF500D2378F /* socket.IO-objc */,
+				036706DD18BE5EF800D2378F /* SocketRocket */,
+			);
+			path = extern;
+			sourceTree = "<group>";
+		};
+		036704F618BE5EF500D2378F /* socket.IO-objc */ = {
+			isa = PBXGroup;
+			children = (
+				036704FC18BE5EF500D2378F /* SocketIO.h */,
+				036704FD18BE5EF500D2378F /* SocketIO.m */,
+				036704FE18BE5EF500D2378F /* SocketIOJSONSerialization.h */,
+				036704FF18BE5EF500D2378F /* SocketIOJSONSerialization.m */,
+				0367050018BE5EF500D2378F /* SocketIOPacket.h */,
+				0367050118BE5EF500D2378F /* SocketIOPacket.m */,
+				0367050218BE5EF500D2378F /* SocketIOTransport.h */,
+				0367050318BE5EF500D2378F /* SocketIOTransportWebsocket.h */,
+				0367050418BE5EF500D2378F /* SocketIOTransportWebsocket.m */,
+				0367050518BE5EF500D2378F /* SocketIOTransportXHR.h */,
+				0367050618BE5EF500D2378F /* SocketIOTransportXHR.m */,
+			);
+			path = "socket.IO-objc";
+			sourceTree = "<group>";
+		};
+		036706DD18BE5EF800D2378F /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				03670B3418BE5EFF00D2378F /* base64.c */,
+				03670B3518BE5EFF00D2378F /* base64.h */,
+				03670B3618BE5EFF00D2378F /* NSData+SRB64Additions.h */,
+				03670B3718BE5EFF00D2378F /* NSData+SRB64Additions.m */,
+				03670B3818BE5EFF00D2378F /* SocketRocket-Prefix.pch */,
+				03670B3918BE5EFF00D2378F /* SRWebSocket.h */,
+				03670B3A18BE5EFF00D2378F /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		036704B318BD635600D2378F /* OchoPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 036704E618BD635600D2378F /* Build configuration list for PBXNativeTarget "OchoPad" */;
+			buildPhases = (
+				036704B018BD635600D2378F /* Sources */,
+				036704B118BD635600D2378F /* Frameworks */,
+				036704B218BD635600D2378F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OchoPad;
+			productName = OchoPad;
+			productReference = 036704B418BD635600D2378F /* OchoPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		036704D418BD635600D2378F /* OchoPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 036704E918BD635600D2378F /* Build configuration list for PBXNativeTarget "OchoPadTests" */;
+			buildPhases = (
+				036704D118BD635600D2378F /* Sources */,
+				036704D218BD635600D2378F /* Frameworks */,
+				036704D318BD635600D2378F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				036704DB18BD635600D2378F /* PBXTargetDependency */,
+			);
+			name = OchoPadTests;
+			productName = OchoPadTests;
+			productReference = 036704D518BD635600D2378F /* OchoPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		036704AC18BD635600D2378F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Team Ocho (8)";
+				TargetAttributes = {
+					036704D418BD635600D2378F = {
+						TestTargetID = 036704B318BD635600D2378F;
+					};
+				};
+			};
+			buildConfigurationList = 036704AF18BD635600D2378F /* Build configuration list for PBXProject "OchoPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 036704AB18BD635600D2378F;
+			productRefGroup = 036704B518BD635600D2378F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				036704B318BD635600D2378F /* OchoPad */,
+				036704D418BD635600D2378F /* OchoPadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		036704B218BD635600D2378F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036704D018BD635600D2378F /* Images.xcassets in Resources */,
+				036704C218BD635600D2378F /* InfoPlist.strings in Resources */,
+				036704CB18BD635600D2378F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		036704D318BD635600D2378F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036704E118BD635600D2378F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		036704B018BD635600D2378F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03670B8018BE5F0000D2378F /* SocketIOTransportXHR.m in Sources */,
+				036710D818BE5F0000D2378F /* NSData+SRB64Additions.m in Sources */,
+				036704CE18BD635600D2378F /* ViewController.m in Sources */,
+				036704EE18BD68B400D2378F /* CourseViewController.m in Sources */,
+				036704C818BD635600D2378F /* AppDelegate.m in Sources */,
+				036704C418BD635600D2378F /* main.m in Sources */,
+				03670B7C18BE5F0000D2378F /* SocketIO.m in Sources */,
+				036704F418BE414100D2378F /* CourseDetailsViewController.m in Sources */,
+				036704F118BD691800D2378F /* Course.m in Sources */,
+				03670B7D18BE5F0000D2378F /* SocketIOJSONSerialization.m in Sources */,
+				03670B7F18BE5F0000D2378F /* SocketIOTransportWebsocket.m in Sources */,
+				036710D718BE5F0000D2378F /* base64.c in Sources */,
+				03670B7E18BE5F0000D2378F /* SocketIOPacket.m in Sources */,
+				036710D918BE5F0000D2378F /* SRWebSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		036704D118BD635600D2378F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036704E318BD635600D2378F /* OchoPadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		036704DB18BD635600D2378F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 036704B318BD635600D2378F /* OchoPad */;
+			targetProxy = 036704DA18BD635600D2378F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		036704C018BD635600D2378F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036704C118BD635600D2378F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		036704C918BD635600D2378F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036704CA18BD635600D2378F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		036704DF18BD635600D2378F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036704E018BD635600D2378F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		036704E418BD635600D2378F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		036704E518BD635600D2378F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		036704E718BD635600D2378F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OchoPad/OchoPad-Prefix.pch";
+				INFOPLIST_FILE = "OchoPad/OchoPad-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nico/Dropbox/iOS-OchoApp/OchoPad/extern/SocketRocket/.env",
+					"/Users/nico/Dropbox/iOS-OchoApp/OchoPad/extern/SocketRocket/.env/lib/python2.7/config",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		036704E818BD635600D2378F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OchoPad/OchoPad-Prefix.pch";
+				INFOPLIST_FILE = "OchoPad/OchoPad-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nico/Dropbox/iOS-OchoApp/OchoPad/extern/SocketRocket/.env",
+					"/Users/nico/Dropbox/iOS-OchoApp/OchoPad/extern/SocketRocket/.env/lib/python2.7/config",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		036704EA18BD635600D2378F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OchoPad.app/OchoPad";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OchoPad/OchoPad-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OchoPadTests/OchoPadTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		036704EB18BD635600D2378F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OchoPad.app/OchoPad";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OchoPad/OchoPad-Prefix.pch";
+				INFOPLIST_FILE = "OchoPadTests/OchoPadTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		036704AF18BD635600D2378F /* Build configuration list for PBXProject "OchoPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036704E418BD635600D2378F /* Debug */,
+				036704E518BD635600D2378F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		036704E618BD635600D2378F /* Build configuration list for PBXNativeTarget "OchoPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036704E718BD635600D2378F /* Debug */,
+				036704E818BD635600D2378F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		036704E918BD635600D2378F /* Build configuration list for PBXNativeTarget "OchoPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036704EA18BD635600D2378F /* Debug */,
+				036704EB18BD635600D2378F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 036704AC18BD635600D2378F /* Project object */;
+}
