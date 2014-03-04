@@ -4,6 +4,21 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--View Controller - Course Page View Controller-->
+        <scene sceneID="ZA9-9O-X37">
+            <objects>
+                <viewController title="Course Page View Controller" id="KZR-mN-n5S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VzP-N1-YYa">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Course Page" id="FP7-dQ-L6b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5E9-Uh-T7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="-1351"/>
+        </scene>
         <!--Course View Controller - Yearning 2 Know-->
         <scene sceneID="mR3-vK-WuJ">
             <objects>
@@ -50,6 +65,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="KZR-mN-n5S" kind="push" identifier="CoursePageSegue" id="cSL-dY-3i9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDt-1k-l5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +87,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iqp-kV-JgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="-157"/>
+            <point key="canvasLocation" x="683" y="-174"/>
         </scene>
         <!--Course Details View Controller - Add Course-->
         <scene sceneID="tne-QT-ifu">
@@ -138,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="-174"/>
+            <point key="canvasLocation" x="1582" y="-174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ssq-Hf-oyA">

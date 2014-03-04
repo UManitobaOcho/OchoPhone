@@ -118,6 +118,18 @@
     }   
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+    
+    //Build a segue string based on the selected cell
+    NSString *segueString = [NSString stringWithFormat:@"CoursePageSegue"];
+    
+    //Since contentArray is an array of strings, we can use it to build a unique
+    //identifier for each segue.
+    
+    //Perform a segue.
+    [self performSegueWithIdentifier:segueString sender:[self.courses objectAtIndex:[indexPath row]]];
+}
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
