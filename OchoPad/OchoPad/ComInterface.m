@@ -48,7 +48,7 @@
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
-    NSLog(@"didReceiveEvent()");
+    NSLog(@"didReceiveEvent >>> data: %@", packet.name);
 }
 
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error

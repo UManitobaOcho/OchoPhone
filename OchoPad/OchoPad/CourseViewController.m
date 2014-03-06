@@ -32,6 +32,12 @@
     
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
     
+    SocketIOCallback cb = ^(id argsData) {
+        NSDictionary *response = argsData;
+        NSLog(@"shits going down son >>> data: %@", response);
+    };
+    
+    [mySocketIO sendEvent:@"getCourses" withData:@1 andAcknowledge:cb];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
