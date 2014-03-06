@@ -15,10 +15,30 @@
 
 @implementation ComInterface
 
-- (void) ComInterface:init
++ (ComInterface *)sharedInstance
 {
-    SocketIO *socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [socketIO connectToHost:@"TODO" onPort:8080];
+    static ComInterface *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
+- (id) init
+{
+    NSDictionary *cookieProperties = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      @"ec2-54-201-56-122.us-west-2.compute.amazonaws.com", NSHTTPCookieDomain,
+                                      @"\\", NSHTTPCookiePath,
+                                      @"express.sid", NSHTTPCookieName,
+                                      @"s:test", NSHTTPCookieValue,
+                                      nil];
+    
+    _socketIO = [[SocketIO alloc] initWithDelegate:self];
+    [_socketIO connectToHost:@"ec2-54-201-56-122.us-west-2.compute.amazonaws.com" onPort:8080 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"express.sid", @"cookie", nil] withCookieParams:cookieProperties];
+    
+    return self;
 }
 
 - (void) socketIODidConnect:(SocketIO *)socket

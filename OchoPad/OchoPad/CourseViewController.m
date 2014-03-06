@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Team Ocho (8). All rights reserved.
 //
 
+#import "ComInterface.h"
 #import "CourseViewController.h"
 #import "SingleCourseViewController.h"
 #import "Course.h"
@@ -28,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
