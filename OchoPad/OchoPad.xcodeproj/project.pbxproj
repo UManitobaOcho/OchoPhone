@@ -35,6 +35,7 @@
 		0367111F18BE610B00D2378F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367111E18BE610B00D2378F /* Security.framework */; };
 		0367112118BE612100D2378F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112018BE612100D2378F /* libicucore.dylib */; };
 		0367112318BE612A00D2378F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112218BE612A00D2378F /* CFNetwork.framework */; };
+		4C1446D818C8FE4E003BA08D /* SingleCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		0367111E18BE610B00D2378F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0367112018BE612100D2378F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		0367112218BE612A00D2378F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4C1446D618C8FE4E003BA08D /* SingleCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCourseViewController.h; sourceTree = "<group>"; };
+		4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCourseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				036704F018BD691800D2378F /* Course.m */,
 				036704F218BE414100D2378F /* CourseDetailsViewController.h */,
 				036704F318BE414100D2378F /* CourseDetailsViewController.m */,
+				4C1446D618C8FE4E003BA08D /* SingleCourseViewController.h */,
+				4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */,
 			);
 			path = OchoPad;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				036704C418BD635600D2378F /* main.m in Sources */,
 				03670B7C18BE5F0000D2378F /* SocketIO.m in Sources */,
 				036704F418BE414100D2378F /* CourseDetailsViewController.m in Sources */,
+				4C1446D818C8FE4E003BA08D /* SingleCourseViewController.m in Sources */,
 				036704F118BD691800D2378F /* Course.m in Sources */,
 				03670B7D18BE5F0000D2378F /* SocketIOJSONSerialization.m in Sources */,
 				03670B7F18BE5F0000D2378F /* SocketIOTransportWebsocket.m in Sources */,
@@ -580,6 +586,7 @@
 				036704E818BD635600D2378F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		036704E918BD635600D2378F /* Build configuration list for PBXNativeTarget "OchoPadTests" */ = {
 			isa = XCConfigurationList;
@@ -588,6 +595,7 @@
 				036704EB18BD635600D2378F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

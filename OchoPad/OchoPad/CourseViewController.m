@@ -7,10 +7,11 @@
 //
 
 #import "CourseViewController.h"
+#import "SingleCourseViewController.h"
 #import "Course.h"
 
 @interface CourseViewController ()
-
+@property int selectedRow;
 @end
 
 @implementation CourseViewController
@@ -85,6 +86,10 @@
                                   = [navigationController viewControllers][0];
         courseDetailsViewController.delegate = self;
     }
+    if ([segue.identifier isEqualToString:@"CourseChosen"]) {
+        SingleCourseViewController *controller = (SingleCourseViewController *) segue.destinationViewController;
+        controller.currCourse = (self.courses)[self.selectedRow];
+    }
 }
 
 - (void)courseDetailsViewController:(CourseDetailsViewController *)controller didAddCourse:(Course *)course
@@ -119,9 +124,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    
+    self.selectedRow = [indexPath row];
     //Build a segue string based on the selected cell
-    NSString *segueString = [NSString stringWithFormat:@"CoursePageSegue"];
+    NSString *segueString = [NSString stringWithFormat:@"CourseChosen"];
     
     //Since contentArray is an array of strings, we can use it to build a unique
     //identifier for each segue.

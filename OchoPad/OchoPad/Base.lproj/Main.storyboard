@@ -4,16 +4,35 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Course Page View Controller-->
+        <!--Single Course View Controller - Course Page View Controller-->
         <scene sceneID="ZA9-9O-X37">
             <objects>
-                <viewController title="Course Page View Controller" id="KZR-mN-n5S" sceneMemberID="viewController">
+                <viewController title="Course Page View Controller" id="KZR-mN-n5S" customClass="SingleCourseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VzP-N1-YYa">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR: No Course Loaded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="08U-0t-q8b">
+                                <rect key="frame" x="124" y="74" width="624" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="####" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hl8-5h-Wei">
+                                <rect key="frame" x="20" y="74" width="96" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Course Page" id="FP7-dQ-L6b"/>
+                    <connections>
+                        <outlet property="courseNumber" destination="hl8-5h-Wei" id="nIf-h0-eO7"/>
+                        <outlet property="label" destination="08U-0t-q8b" id="UkO-SB-wki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5E9-Uh-T7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +85,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="KZR-mN-n5S" kind="push" identifier="CoursePageSegue" id="cSL-dY-3i9"/>
+                        <segue destination="KZR-mN-n5S" kind="push" identifier="CourseChosen" id="cSL-dY-3i9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDt-1k-l5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
