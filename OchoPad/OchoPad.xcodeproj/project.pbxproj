@@ -36,6 +36,8 @@
 		0367112318BE612A00D2378F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112218BE612A00D2378F /* CFNetwork.framework */; };
 		4C1446D818C8FE4E003BA08D /* SingleCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */; };
 		4C1446DB18C906B4003BA08D /* ComInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446DA18C906B4003BA08D /* ComInterface.m */; };
+		D3515DB218C9293500C6A1D7 /* ProfAddAssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */; };
+		D3515DB518C94A6900C6A1D7 /* ProfAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,10 @@
 		4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCourseViewController.m; sourceTree = "<group>"; };
 		4C1446D918C906B4003BA08D /* ComInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInterface.h; sourceTree = "<group>"; };
 		4C1446DA18C906B4003BA08D /* ComInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComInterface.m; sourceTree = "<group>"; };
+		D3515DB018C9293500C6A1D7 /* ProfAddAssignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfAddAssignmentViewController.h; sourceTree = "<group>"; };
+		D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfAddAssignmentViewController.m; sourceTree = "<group>"; };
+		D3515DB318C94A6900C6A1D7 /* ProfAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfAssignment.h; sourceTree = "<group>"; };
+		D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfAssignment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,12 +172,16 @@
 				036704C618BD635600D2378F /* AppDelegate.h */,
 				036704C718BD635600D2378F /* AppDelegate.m */,
 				036704C918BD635600D2378F /* Main.storyboard */,
+				D3515DB018C9293500C6A1D7 /* ProfAddAssignmentViewController.h */,
+				D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */,
 				036704CF18BD635600D2378F /* Images.xcassets */,
 				036704BE18BD635600D2378F /* Supporting Files */,
 				036704EC18BD68B400D2378F /* CourseViewController.h */,
 				036704ED18BD68B400D2378F /* CourseViewController.m */,
 				036704EF18BD691800D2378F /* Course.h */,
 				036704F018BD691800D2378F /* Course.m */,
+				D3515DB318C94A6900C6A1D7 /* ProfAssignment.h */,
+				D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */,
 				036704F218BE414100D2378F /* CourseDetailsViewController.h */,
 				036704F318BE414100D2378F /* CourseDetailsViewController.m */,
 				4C1446D618C8FE4E003BA08D /* SingleCourseViewController.h */,
@@ -358,9 +368,11 @@
 				036704F418BE414100D2378F /* CourseDetailsViewController.m in Sources */,
 				4C1446D818C8FE4E003BA08D /* SingleCourseViewController.m in Sources */,
 				036704F118BD691800D2378F /* Course.m in Sources */,
+				D3515DB518C94A6900C6A1D7 /* ProfAssignment.m in Sources */,
 				03670B7D18BE5F0000D2378F /* SocketIOJSONSerialization.m in Sources */,
 				03670B7F18BE5F0000D2378F /* SocketIOTransportWebsocket.m in Sources */,
 				036710D718BE5F0000D2378F /* base64.c in Sources */,
+				D3515DB218C9293500C6A1D7 /* ProfAddAssignmentViewController.m in Sources */,
 				4C1446DB18C906B4003BA08D /* ComInterface.m in Sources */,
 				03670B7E18BE5F0000D2378F /* SocketIOPacket.m in Sources */,
 				036710D918BE5F0000D2378F /* SRWebSocket.m in Sources */,

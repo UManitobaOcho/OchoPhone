@@ -14,6 +14,14 @@
 
 @implementation SingleCourseViewController
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ProfAddAssignment"]){
+        ProfAddAssignmentViewController *controller = (ProfAddAssignmentViewController *)segue.destinationViewController;
+        controller.currCourse = self.currCourse;
+    }
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

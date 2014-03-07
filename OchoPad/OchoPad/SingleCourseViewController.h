@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Course.h"
+#import "ProfAddAssignmentViewController.h"
 
 @interface SingleCourseViewController : UIViewController
 @property(nonatomic) Course *currCourse;
