@@ -11,5 +11,6 @@
 
 @interface ComInterface : NSObject <SocketIODelegate>
 @property (nonatomic,strong) SocketIO* socketIO;
++ (ComInterface *) sharedInstance;
 
 @end
