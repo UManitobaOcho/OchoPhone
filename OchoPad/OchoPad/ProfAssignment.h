@@ -14,5 +14,6 @@
 @property (nonatomic, copy) NSString *ReleaseDate;
 @property (nonatomic, copy) NSString *DueDate;
 @property (nonatomic, copy) NSString *CourseNumber;
+@property (nonatomic, copy) NSString *file;
 
 @end

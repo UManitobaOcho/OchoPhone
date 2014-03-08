@@ -23,6 +23,12 @@
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *DueDatePicker;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *FileInputSwitcher;
+
+@property (weak, nonatomic) IBOutlet UITextView *FileInputBox;
+
+@property (weak, nonatomic) IBOutlet UILabel *UploadMessage;
+
 - (IBAction)done:(id)sender;
 
 @end
