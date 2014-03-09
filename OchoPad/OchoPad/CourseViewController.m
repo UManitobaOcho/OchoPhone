@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Team Ocho (8). All rights reserved.
 //
 
-#import "ComInterface.h"
 #import "CourseViewController.h"
 #import "SingleCourseViewController.h"
 #import "Course.h"
 
 @interface CourseViewController ()
 @property int selectedRow;
+@property SocketIO *mySocketIO;
 @end
 
 @implementation CourseViewController
@@ -29,21 +29,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     [ComInterface sharedInstance].delegate = self;
+    _mySocketIO = [ComInterface sharedInstance].socketIO;
     
-    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+   
     
     SocketIOCallback cb = ^(id argsData) {
         NSDictionary *response = argsData;
         NSLog(@"shits going down son >>> data: %@", response);
     };
     
-    [mySocketIO sendEvent:@"getCourses" withData:@1 andAcknowledge:cb];
-
+    [_mySocketIO sendEvent:@"getCourses" withData:@1 andAcknowledge:cb];
+//    [_mySocketIO sendEvent:@"testios" withData:@1 andAcknowledge:cb];
+    
+    NSLog(@"dick");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)receivedPacket:(id)packet
+{
+    NSLog(@"shits going down son >>> data: %@", packet);
 }
 
 - (void)didReceiveMemoryWarning

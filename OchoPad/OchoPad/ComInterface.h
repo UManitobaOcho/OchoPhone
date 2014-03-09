@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "SocketIO.h"
+#import "SocketIOPacket.h"
+
+@protocol SocketIOConnectionDelegate <NSObject>
+@required
+- (void) receivedPacket:(id)packet;
+@end
 
 @interface ComInterface : NSObject <SocketIODelegate>
+{
+    id <SocketIOConnectionDelegate> delegate;
+}
 @property (nonatomic,strong) SocketIO* socketIO;
+@property (retain) id <SocketIOConnectionDelegate> delegate;
 + (ComInterface *) sharedInstance;
 
 @end

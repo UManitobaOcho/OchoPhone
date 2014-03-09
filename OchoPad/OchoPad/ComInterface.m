@@ -7,13 +7,13 @@
 //
 
 #import "ComInterface.h"
-#import "SocketIOPacket.h"
-#import "SocketIO.h"
 
 @interface ComInterface()
 @end
 
 @implementation ComInterface
+
+@synthesize delegate;
 
 + (ComInterface *)sharedInstance
 {
@@ -29,14 +29,14 @@
 - (id) init
 {
     NSDictionary *cookieProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      @"ec2-54-201-23-206.us-west-2.compute.amazonaws.com", NSHTTPCookieDomain,
+                                      @"ec2-54-201-63-66.us-west-2.compute.amazonaws.com", NSHTTPCookieDomain,
                                       @"\\", NSHTTPCookiePath,
                                       @"express.sid", NSHTTPCookieName,
                                       @"s:test", NSHTTPCookieValue,
                                       nil];
     
     _socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [_socketIO connectToHost:@"ec2-54-201-23-206.us-west-2.compute.amazonaws.com" onPort:8080 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"express.sid", @"cookie", nil] withCookieParams:cookieProperties];
+    [_socketIO connectToHost:@"ec2-54-201-63-66.us-west-2.compute.amazonaws.com" onPort:8080 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"express.sid", @"cookie", nil] withCookieParams:cookieProperties];
     
     return self;
 }
@@ -48,7 +48,11 @@
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
-    NSLog(@"didReceiveEvent >>> data: %@", packet.name);
+    NSError *e = nil;
+    NSDictionary *JSON = [NSDictionary dictionaryWithDictionary:packet.dataAsJSON];
+    NSArray *ns = JSON[@"args"];
+    NSLog(@"didReceiveEvent >>> data: ");
+    [delegate receivedPacket:packet.dataAsJSON];
 }
 
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error

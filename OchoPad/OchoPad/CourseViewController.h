@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CourseDetailsViewController.h"
+#import "ComInterface.h"
 
-@interface CourseViewController : UITableViewController <CourseDetailsViewControllerDelegate>
+@interface CourseViewController : UITableViewController <CourseDetailsViewControllerDelegate, SocketIOConnectionDelegate>
 
 @property (nonatomic, strong) NSMutableArray *courses;
 
