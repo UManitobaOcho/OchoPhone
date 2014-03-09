@@ -29,20 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //need to set delegate of singleton so that it may callback to the current controller
      [ComInterface sharedInstance].delegate = self;
     _mySocketIO = [ComInterface sharedInstance].socketIO;
     
-   
+    [_mySocketIO sendEvent:@"getCourses" withData:@1];
     
-    SocketIOCallback cb = ^(id argsData) {
-        NSDictionary *response = argsData;
-        NSLog(@"shits going down son >>> data: %@", response);
-    };
     
-    [_mySocketIO sendEvent:@"getCourses" withData:@1 andAcknowledge:cb];
-//    [_mySocketIO sendEvent:@"testios" withData:@1 andAcknowledge:cb];
-    
-    NSLog(@"dick");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -50,9 +44,31 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)fillCourseList:(NSArray *)response rowCount:(NSInteger)rowCount
+{    
+    for (int i = 0; i < rowCount; i++) {
+        NSLog(@"received response >>> data: %@", response[i]);
+        
+        Course *course = [[Course alloc] init];
+        course.name = response[i][@"course_name"];
+        course.number = response[i][@"course_number"];
+        [self.courses addObject:course];
+        
+        //insert into course list
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.courses count] - 1) inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    NSLog(@"received response >>> data: %@", self.courses);
+}
+
 - (void)receivedPacket:(id)packet
 {
-    NSLog(@"shits going down son >>> data: %@", packet);
+    NSArray *response = packet[@"args"][0][@"rows"];
+    NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
+    
+    if([packet[@"name"] isEqual: @"foundCourses"]) {
+        [self fillCourseList:response rowCount:count];
+    }
 }
 
 - (void)didReceiveMemoryWarning

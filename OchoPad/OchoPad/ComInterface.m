@@ -48,10 +48,7 @@
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
-    NSError *e = nil;
-    NSDictionary *JSON = [NSDictionary dictionaryWithDictionary:packet.dataAsJSON];
-    NSArray *ns = JSON[@"args"];
-    NSLog(@"didReceiveEvent >>> data: ");
+    NSLog(@"didReceiveEvent >>>");
     [delegate receivedPacket:packet.dataAsJSON];
 }
 

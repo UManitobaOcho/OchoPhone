@@ -18,15 +18,15 @@
 {
     _courses = [NSMutableArray arrayWithCapacity:20];
     
-    Course *course = [[Course alloc] init];
-    course.name = @"Software Engineering 2";
-    course.number = @"4350";
-    [_courses addObject:course];
-    
-    course = [[Course alloc] init];
-    course.name = @"Operating Systems";
-    course.number = @"3350";
-    [_courses addObject:course];
+//    Course *course = [[Course alloc] init];
+//    course.name = @"Software Engineering 2";
+//    course.number = @"4350";
+//    [_courses addObject:course];
+//    
+//    course = [[Course alloc] init];
+//    course.name = @"Operating Systems";
+//    course.number = @"3350";
+//    [_courses addObject:course];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     CourseViewController *courseViewController = [navigationController viewControllers][0];
