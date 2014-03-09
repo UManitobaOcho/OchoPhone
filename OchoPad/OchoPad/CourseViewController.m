@@ -50,6 +50,7 @@
         NSLog(@"received response >>> data: %@", response[i]);
         
         Course *course = [[Course alloc] init];
+        course.course_id = response[i][@"course_id"];
         course.name = response[i][@"course_name"];
         course.number = response[i][@"course_number"];
         [self.courses addObject:course];
@@ -58,7 +59,6 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.courses count] - 1) inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
-    NSLog(@"received response >>> data: %@", self.courses);
 }
 
 - (void)receivedPacket:(id)packet
@@ -68,6 +68,8 @@
     
     if([packet[@"name"] isEqual: @"foundCourses"]) {
         [self fillCourseList:response rowCount:count];
+    } else if([packet[@"name"] isEqual: @"courseDeleted"]) {
+        NSLog(@"Course deleted successfully");
     }
 }
 
@@ -142,15 +144,25 @@
     return YES;
 }
 
-
+//remove course from server
+- (void)deleteCourse:(NSInteger)row
+{
+    Course *course = self.courses[row];
+    NSString *course_id = course.course_id;
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:course_id, @"courseId", nil];
+    [_mySocketIO sendEvent:@"deleteCourse" withData:data];
+    
+    [self.courses removeObjectAtIndex:row];
+}
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.courses removeObjectAtIndex:[indexPath row]];
+        [self deleteCourse:[indexPath row]];
         
+        //remove row from tableView
         [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
