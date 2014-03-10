@@ -13,6 +13,7 @@
 @interface CourseViewController ()
 @property int selectedRow;
 @property SocketIO *mySocketIO;
+@property Course *courseToAdd;
 @end
 
 @implementation CourseViewController
@@ -66,10 +67,18 @@
     NSArray *response = packet[@"args"][0][@"rows"];
     NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
     
-    if([packet[@"name"] isEqual: @"foundCourses"]) {
+    if([packet[@"name"] isEqual: @"foundCourses"])
+    {
         [self fillCourseList:response rowCount:count];
-    } else if([packet[@"name"] isEqual: @"courseDeleted"]) {
+    } else if([packet[@"name"] isEqual: @"courseDeleted"])
+    {
         NSLog(@"Course deleted successfully");
+    } else if([packet[@"name"] isEqual: @"courseAdded"])
+    {
+        _courseToAdd.course_id = response[0][@"addcourse"];
+        [self addCourseToTable:_courseToAdd];
+        _courseToAdd = nil;
+        NSLog(@"Course added successfully");
     }
 }
 
@@ -129,12 +138,24 @@
     }
 }
 
-- (void)courseDetailsViewController:(CourseDetailsViewController *)controller didAddCourse:(Course *)course
+- (void)addCourseToTable:(Course *)course
 {
+    //add course to table view
     [self.courses addObject:course];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.courses count] - 1) inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)courseDetailsViewController:(CourseDetailsViewController *)controller didAddCourse:(Course *)course
+{
+    _courseToAdd = course;
+    
+    //add course to server
+    NSInteger userId = [ComInterface sharedInstance].userId;
+    BOOL isProf = [ComInterface sharedInstance].isProf;
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:course.name, @"courseName",course.number, @"courseNum",course.section, @"section",course.class_times, @"times", @(userId), @"userId", @(isProf), @"isProf", nil];
+    [_mySocketIO sendEvent:@"addCourse" withData:data];
 }
 
 // Override to support conditional editing of the table view.

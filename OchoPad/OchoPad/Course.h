@@ -12,6 +12,8 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *number;
+@property (nonatomic, copy) NSString *section;
+@property (nonatomic, copy) NSString *class_times;
 @property (nonatomic, copy) NSString *course_id;
 
 @end

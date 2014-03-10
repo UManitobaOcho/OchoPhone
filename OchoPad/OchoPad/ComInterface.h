@@ -21,6 +21,8 @@
 }
 @property (nonatomic,strong) SocketIO* socketIO;
 @property (retain) id <SocketIOConnectionDelegate> delegate;
+@property (nonatomic) NSInteger userId;
+@property (nonatomic) BOOL isProf;
 + (ComInterface *) sharedInstance;
 
 @end

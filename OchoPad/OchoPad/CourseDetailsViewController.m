@@ -27,7 +27,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
 	// Do any additional setup after loading the view.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [mainArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
+    cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +55,13 @@
     Course *course = [[Course alloc] init];
     course.name = self.nameTextField.text;
     course.number = self.numberTextField.text;
+    course.section = self.sectionTextField.text;
+    
+    if([self.onlineSwitch isOn]) {
+        course.class_times = @"Online";
+    } else {
+        NSLog(@"off");
+    }
     
     [self.delegate courseDetailsViewController:self didAddCourse:course];
 }
@@ -49,5 +70,14 @@
 {
     [self.delegate courseDetailsViewControllerDidCancel:self];
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark) {
+//        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+//    } else {
+//        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+//}
 
 @end
