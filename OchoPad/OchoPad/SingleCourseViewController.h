@@ -14,5 +14,7 @@
 @property(nonatomic) Course *currCourse;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UILabel *courseNumber;
+@property (weak, nonatomic) IBOutlet UITableView *AssignmentList;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 
 @end

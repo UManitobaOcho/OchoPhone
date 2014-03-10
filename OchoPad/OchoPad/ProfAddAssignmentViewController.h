@@ -19,13 +19,20 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *AssignmentNameBox;
 
+@property (weak, nonatomic) IBOutlet UILabel *AssignmentNameError;
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *ReleaseDatePicker;
 
+@property (weak, nonatomic) IBOutlet UILabel *ReleaseDateError;
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *DueDatePicker;
+@property (weak, nonatomic) IBOutlet UILabel *DueDateError;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *FileInputSwitcher;
 
 @property (weak, nonatomic) IBOutlet UITextView *FileInputBox;
+
+@property (weak, nonatomic) IBOutlet UILabel *FileInputError;
 
 @property (weak, nonatomic) IBOutlet UILabel *UploadMessage;
 
