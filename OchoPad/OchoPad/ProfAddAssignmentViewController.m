@@ -11,9 +11,12 @@
 
 @interface ProfAddAssignmentViewController ()
 
+
 @end
 
 @implementation ProfAddAssignmentViewController
+
+ProfAssignment *profAssignment;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +29,14 @@
 
 - (void)viewDidLoad
 {
+    self.AssignmentNameError.hidden = YES;
+    self.ReleaseDateError.hidden = YES;
+    self.DueDateError.hidden = YES;
+    self.FileInputError.hidden = YES;
+    self.AssignmentNameError.text = @" ";
+    self.ReleaseDateError.text = @" ";
+    self.DueDateError.text = @" ";
+    self.FileInputError.text = @" ";
     [super viewDidLoad];
 }
 
@@ -59,35 +70,90 @@
     NSString *dueDate = [dateFormat stringFromDate:dueDateOrig];
     
     // create assignment object
-    ProfAssignment *profAssignment = [[ProfAssignment alloc] init];
+    profAssignment = [[ProfAssignment alloc] init];
     profAssignment.AssignmentName = self.AssignmentNameBox.text;
     profAssignment.CourseNumber = self.currCourse.number;
     profAssignment.ReleaseDate = releaseDate;
     profAssignment.DueDate = dueDate;
-    profAssignment.file = [NSString stringWithContentsOfFile:fileName];
     
-    // print the values
-    NSLog(@"%@",profAssignment.AssignmentName);
-    NSLog(@"%@",profAssignment.CourseNumber);
-    NSLog(@"%@",profAssignment.file);
-    NSLog(@"%@",profAssignment.ReleaseDate);
-    NSLog(@"%@",profAssignment.DueDate);
+    if(self.FileInputSwitcher.selectedSegmentIndex == 0){
+        profAssignment.file = [NSString stringWithContentsOfFile:fileName];
+    }else{
+        profAssignment.file = nil;
+    }
     
-//    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
-
-//    SocketIOCallback cb = ^(id argsData) {
-//        NSDictionary *response = argsData;
-//        NSLog(@"AddAssignmentResponse >>> data: %@", response);
-//    };
-    
-//    [mySocketIO sendEvent:@"profAddAssignment" withData:(@"assignmentTitle: %@, course: %@, file: %@, releaseDate: %@, dueDate: %@",profAssignment.AssignmentName,profAssignment.CourseNumber,profAssignment.file,profAssignment.ReleaseDate,profAssignment.DueDate) andAcknowledge:cb];
-    
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    if([self verifyAssignment] == YES) {
+        [self submitAssignment];
+    }
 }
 
 - (IBAction)FileInputMethod:(id)sender {
     self.FileInputBox.hidden = !(self.FileInputBox.hidden);
     self.UploadMessage.hidden = !(self.UploadMessage.hidden);
+}
+
+- (void)submitAssignment
+{
+    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+    
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:profAssignment.AssignmentName, @"assignmentTitle", profAssignment.CourseNumber, @"course", profAssignment.ReleaseDate, @"releaseDate", profAssignment.DueDate, @"dueDate", profAssignment.file, @"file", nil];
+    
+    [mySocketIO sendEvent:@"profAddAssignment" withData:data];
+}
+
+- (bool)verifyAssignment
+{
+    bool isValid = YES;
+
+    NSDateFormatter *df = [NSDateFormatter new];
+    [df setDateFormat:@"dd/MM/yyyy HH:mm"];
+    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:[NSTimeZone localTimeZone].secondsFromGMT];
+    NSDate *currentDate = [NSDate date];
+    
+    self.AssignmentNameError.hidden = YES;
+    self.ReleaseDateError.hidden = YES;
+    self.DueDateError.hidden = YES;
+    self.FileInputError.hidden = YES;
+    self.AssignmentNameError.text = @" ";
+    self.ReleaseDateError.text = @" ";
+    self.DueDateError.text = @" ";
+    self.FileInputError.text = @" ";
+    
+    NSLog(@"%@",self.ReleaseDatePicker.date);
+    NSLog(@"%@",self.DueDatePicker.date);
+    NSLog(@"%@",currentDate);
+    
+	if(self.AssignmentNameBox.text.length <= 1) {
+		self.AssignmentNameError.text = @"Name is to Short";
+        self.AssignmentNameError.hidden = NO;
+		isValid = NO;
+	}
+    
+	if(self.FileInputBox.text.length <= 0 && self.FileInputSwitcher.selectedSegmentIndex == 0) {
+		self.FileInputError.text = @"Type in an assignment or select \'Upload Assignment Later\'";
+        self.FileInputError.hidden = NO;
+		isValid = NO;
+	}
+    
+    if([self.DueDatePicker.date compare:self.ReleaseDatePicker.date] == NSOrderedAscending) {
+        self.ReleaseDateError.text = @"Release Date must be before the Due Date";
+        self.ReleaseDateError.hidden = NO;
+        isValid = NO;
+    }
+    
+    if([self.DueDatePicker.date compare:currentDate] == NSOrderedAscending) {
+        self.DueDateError.text = @"Due Date must be after the current time";
+        self.DueDateError.hidden = NO;
+        isValid = NO;
+    }
+
+    if([self.ReleaseDatePicker.date compare:currentDate] == NSOrderedAscending) {
+        self.ReleaseDateError.text = @"Release Date must be after the current time";
+        self.ReleaseDateError.hidden = NO;
+        isValid = NO;
+    }
+    
+    return isValid;
 }
 
 @end

@@ -72,20 +72,28 @@
     if([packet[@"name"] isEqual: @"foundCourses"])
     {
         [self fillCourseList:response rowCount:count];
-    } else if([packet[@"name"] isEqual: @"courseDeleted"])
+    }
+    else if([packet[@"name"] isEqual: @"courseDeleted"])
     {
         NSLog(@"Course deleted successfully");
-    } else if([packet[@"name"] isEqual: @"courseAdded"])
+    }
+    else if([packet[@"name"] isEqual: @"courseAdded"])
     {
         _courseToAdd.course_id = response[0][@"addcourse"];
         [self addCourseToTable:_courseToAdd];
         _courseToAdd = nil;
         NSLog(@"Course added successfully");
-    } else if([packet[@"name"] isEqual: @"courseUpdated"])
+    }
+    else if([packet[@"name"] isEqual: @"courseUpdated"])
     {
         [self updateCourseInTable:_courseToAdd];
         _courseToAdd = nil;
         NSLog(@"Course updated successfully");
+    }
+    else if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
+    {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        NSLog(@"Professor Assignment Added Successfully");
     }
 }
 

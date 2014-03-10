@@ -19,10 +19,13 @@
 
 @interface SingleCourseViewController : UIViewController
 @property(nonatomic) Course *currCourse;
+
 @property (strong, nonatomic) IBOutlet UITextField *courseName;
 @property (weak, nonatomic) IBOutlet UITextField *courseNumber;
 @property (weak, nonatomic) IBOutlet UITextField *section;
 @property (weak, nonatomic) IBOutlet UISwitch *online;
+@property (weak, nonatomic) IBOutlet UITableView *AssignmentList;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 
 @property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
 
