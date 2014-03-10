@@ -54,6 +54,8 @@
         course.course_id = response[i][@"course_id"];
         course.name = response[i][@"course_name"];
         course.number = response[i][@"course_number"];
+        course.section = response[i][@"course_section"];
+        course.class_times = response[i][@"class_times"];
         [self.courses addObject:course];
         
         //insert into course list
@@ -79,6 +81,11 @@
         [self addCourseToTable:_courseToAdd];
         _courseToAdd = nil;
         NSLog(@"Course added successfully");
+    } else if([packet[@"name"] isEqual: @"courseUpdated"])
+    {
+        [self updateCourseInTable:_courseToAdd];
+        _courseToAdd = nil;
+        NSLog(@"Course updated successfully");
     }
 }
 
@@ -125,16 +132,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"AddCourse"]) {
-        
+    if ([segue.identifier isEqualToString:@"AddCourse"])
+    {
         UINavigationController *navigationController = segue.destinationViewController;
         CourseDetailsViewController *courseDetailsViewController
                                   = [navigationController viewControllers][0];
         courseDetailsViewController.delegate = self;
     }
-    if ([segue.identifier isEqualToString:@"CourseChosen"]) {
-        SingleCourseViewController *controller = (SingleCourseViewController *) segue.destinationViewController;
-        controller.currCourse = (self.courses)[self.selectedRow];
+    if ([segue.identifier isEqualToString:@"CourseChosen"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        SingleCourseViewController *singleCourseViewController = [navigationController viewControllers][0];
+        singleCourseViewController.delegate = self;
+        singleCourseViewController.currCourse = (self.courses)[self.selectedRow];
     }
 }
 
@@ -156,6 +166,38 @@
     BOOL isProf = [ComInterface sharedInstance].isProf;
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:course.name, @"courseName",course.number, @"courseNum",course.section, @"section",course.class_times, @"times", @(userId), @"userId", @(isProf), @"isProf", nil];
     [_mySocketIO sendEvent:@"addCourse" withData:data];
+}
+
+- (void)singleCourseViewControllerDidCancel:(SingleCourseViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)updateCourseInTable:(Course *)course
+{
+    BOOL found = NO;
+    int i = 0;
+    while(i < [_courses count] && found == NO) {
+        Course *curr = _courses[i];
+        if(curr.course_id == course.course_id) {
+            _courses[i] = course;
+            found = YES;
+        } else {
+            i++;
+        }
+    }
+    
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)singleCourseViewController:(SingleCourseViewController *)controller didUpdateCourse:(Course *)course
+{
+    _courseToAdd = course;
+    
+    //update course in server
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:course.course_id, @"courseId", course.name, @"courseName",course.number, @"courseNum",course.section, @"section",course.class_times, @"times", nil];
+    [_mySocketIO sendEvent:@"updateCourse" withData:data];
 }
 
 // Override to support conditional editing of the table view.

@@ -10,9 +10,22 @@
 #import "Course.h"
 #import "ProfAddAssignmentViewController.h"
 
+@class SingleCourseViewController;
+
+@protocol SingleCourseViewControllerDelegate <NSObject>
+- (void)singleCourseViewControllerDidCancel:(SingleCourseViewController *)controller;
+- (void)singleCourseViewController:(SingleCourseViewController *)controller didUpdateCourse:(Course *)course;
+@end
+
 @interface SingleCourseViewController : UIViewController
 @property(nonatomic) Course *currCourse;
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UILabel *courseNumber;
+@property (strong, nonatomic) IBOutlet UITextField *courseName;
+@property (weak, nonatomic) IBOutlet UITextField *courseNumber;
+@property (weak, nonatomic) IBOutlet UITextField *section;
+@property (weak, nonatomic) IBOutlet UISwitch *online;
+
+@property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
+
+- (IBAction)update:(id)sender;
 
 @end

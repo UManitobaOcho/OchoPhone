@@ -4,57 +4,122 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SXW-W9-uca">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="toj-LQ-Pqc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6ib-TB-OQz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4e0-nk-esq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KZR-mN-n5S" kind="relationship" relationship="rootViewController" id="qOy-fI-hIg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juH-2k-O7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-337" y="-1411"/>
+        </scene>
         <!--Single Course View Controller - Course Page View Controller-->
         <scene sceneID="ZA9-9O-X37">
             <objects>
                 <viewController title="Course Page View Controller" id="KZR-mN-n5S" customClass="SingleCourseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VzP-N1-YYa">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR: No Course Loaded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="08U-0t-q8b">
-                                <rect key="frame" x="124" y="74" width="624" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="####" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hl8-5h-Wei">
-                                <rect key="frame" x="20" y="74" width="96" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Sc-Fp-Vhf">
-                                <rect key="frame" x="261" y="259" width="184" height="74"/>
+                                <rect key="frame" x="284" y="823" width="184" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Add Assignment">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="QfN-mY-YpG" kind="push" identifier="ProfAddAssignment" id="PK2-nH-4g7"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="foY-Gz-seN">
+                                <rect key="frame" x="166" y="175" width="471" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="xV8-Gn-b8W">
+                                <rect key="frame" x="166" y="225" width="195" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="vgO-Wt-p2J">
+                                <rect key="frame" x="166" y="274" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nTk-vw-o4Z">
+                                <rect key="frame" x="44" y="179" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xDC-fs-9wg">
+                                <rect key="frame" x="29" y="228" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cm1-q1-BJI">
+                                <rect key="frame" x="33" y="277" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GVQ-O4-wOb">
+                                <rect key="frame" x="33" y="341" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="WU1-59-lm5">
+                                <rect key="frame" x="166" y="335" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Course Page" id="FP7-dQ-L6b"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Course Page" id="FP7-dQ-L6b">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eat-ok-0cu">
+                            <connections>
+                                <action selector="cancel:" destination="KZR-mN-n5S" id="gzk-XX-thR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="RX7-9f-con">
+                            <connections>
+                                <action selector="update:" destination="KZR-mN-n5S" id="PVZ-Tu-X22"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="courseNumber" destination="hl8-5h-Wei" id="nIf-h0-eO7"/>
-                        <outlet property="label" destination="08U-0t-q8b" id="UkO-SB-wki"/>
+                        <outlet property="courseName" destination="foY-Gz-seN" id="Byo-Qz-NNk"/>
+                        <outlet property="courseNumber" destination="xV8-Gn-b8W" id="IRz-fq-keB"/>
+                        <outlet property="online" destination="WU1-59-lm5" id="U6f-Fq-ev3"/>
+                        <outlet property="section" destination="vgO-Wt-p2J" id="n8b-oJ-peo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5E9-Uh-T7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="683" y="-1351"/>
+            <point key="canvasLocation" x="695" y="-1371"/>
         </scene>
         <!--Prof Add Assignment View Controller - Add Assignment-->
         <scene sceneID="v8G-4P-CgK">
             <objects>
                 <viewController id="QfN-mY-YpG" customClass="ProfAddAssignmentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eup-dJ-rVo">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JfK-8A-PGU">
@@ -249,7 +314,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="KZR-mN-n5S" kind="push" identifier="CourseChosen" id="cSL-dY-3i9"/>
+                        <segue destination="toj-LQ-Pqc" kind="modal" identifier="CourseChosen" id="BRW-c9-geb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDt-1k-l5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,6 +555,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfAddAssignmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfAddAssignmentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="FileInputMethod:"/>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="AssignmentNameBox" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="DueDatePicker" candidateClass="UIDatePicker"/>
@@ -502,8 +568,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="SingleCourseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SingleCourseViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="courseNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="update:"/>
+                <relationship kind="outlet" name="courseName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="courseNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="online" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="section" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>

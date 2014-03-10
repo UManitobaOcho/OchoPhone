@@ -35,15 +35,45 @@
 {
     [super viewDidLoad];
     
-    self.label.text = self.currCourse.name;
-    self.courseNumber.text = self.currCourse.number;
-	// Do any additional setup after loading the view.
+    _courseName.text = self.currCourse.name;
+    _courseNumber.text = self.currCourse.number;
+    _section.text = self.currCourse.section;
+    
+    if([self.currCourse.class_times isEqual:@"Online"]) {
+        [_online setOn:YES animated:YES];
+    } else {
+        [_online setOn:NO animated:NO];
+        
+        //set time values here
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)update:(id)sender
+{
+    Course *course = [[Course alloc] init];
+    course.name = self.courseName.text;
+    course.number = self.courseNumber.text;
+    course.section = self.section.text;
+    course.course_id = self.currCourse.course_id;
+    
+    if([self.online isOn]) {
+        course.class_times = @"Online";
+    } else {
+        NSLog(@"off");
+    }
+    
+    [self.delegate singleCourseViewController:self didUpdateCourse:course];
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self.delegate singleCourseViewControllerDidCancel:self];
 }
 
 @end
