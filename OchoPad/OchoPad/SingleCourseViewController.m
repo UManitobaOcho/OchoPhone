@@ -20,6 +20,10 @@
         ProfAddAssignmentViewController *controller = (ProfAddAssignmentViewController *)segue.destinationViewController;
         controller.currCourse = self.currCourse;
     }
+    else if([segue.identifier isEqualToString:@"AddStudentToCourse"]){
+        AddStudentToCourseViewController *controller = (AddStudentToCourseViewController *)segue.destinationViewController;
+        controller.currCourse = self.currCourse;
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

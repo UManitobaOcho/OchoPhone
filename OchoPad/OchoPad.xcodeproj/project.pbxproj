@@ -34,6 +34,7 @@
 		0367111F18BE610B00D2378F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367111E18BE610B00D2378F /* Security.framework */; };
 		0367112118BE612100D2378F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112018BE612100D2378F /* libicucore.dylib */; };
 		0367112318BE612A00D2378F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112218BE612A00D2378F /* CFNetwork.framework */; };
+		2BB71EFB18CF88910006C121 /* AddStudentToCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB71EFA18CF88910006C121 /* AddStudentToCourseViewController.m */; };
 		4C1446D818C8FE4E003BA08D /* SingleCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */; };
 		4C1446DB18C906B4003BA08D /* ComInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446DA18C906B4003BA08D /* ComInterface.m */; };
 		D3515DB218C9293500C6A1D7 /* ProfAddAssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */; };
@@ -95,6 +96,8 @@
 		0367111E18BE610B00D2378F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0367112018BE612100D2378F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		0367112218BE612A00D2378F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2BB71EF918CF88910006C121 /* AddStudentToCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentToCourseViewController.h; sourceTree = "<group>"; };
+		2BB71EFA18CF88910006C121 /* AddStudentToCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentToCourseViewController.m; sourceTree = "<group>"; };
 		4C1446D618C8FE4E003BA08D /* SingleCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCourseViewController.h; sourceTree = "<group>"; };
 		4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCourseViewController.m; sourceTree = "<group>"; };
 		4C1446D918C906B4003BA08D /* ComInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInterface.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				036704C618BD635600D2378F /* AppDelegate.h */,
 				036704C718BD635600D2378F /* AppDelegate.m */,
 				036704C918BD635600D2378F /* Main.storyboard */,
+				2BB71EF918CF88910006C121 /* AddStudentToCourseViewController.h */,
+				2BB71EFA18CF88910006C121 /* AddStudentToCourseViewController.m */,
 				D3515DB018C9293500C6A1D7 /* ProfAddAssignmentViewController.h */,
 				D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */,
 				036704CF18BD635600D2378F /* Images.xcassets */,
@@ -359,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB71EFB18CF88910006C121 /* AddStudentToCourseViewController.m in Sources */,
 				03670B8018BE5F0000D2378F /* SocketIOTransportXHR.m in Sources */,
 				036710D818BE5F0000D2378F /* NSData+SRB64Additions.m in Sources */,
 				036704EE18BD68B400D2378F /* CourseViewController.m in Sources */,

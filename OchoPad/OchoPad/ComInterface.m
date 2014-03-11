@@ -29,14 +29,14 @@
 - (id) init
 {
     NSDictionary *cookieProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      @"ec2-54-201-63-66.us-west-2.compute.amazonaws.com", NSHTTPCookieDomain,
+                                      @"ec2-54-201-216-158.us-west-2.compute.amazonaws.com", NSHTTPCookieDomain,
                                       @"\\", NSHTTPCookiePath,
                                       @"express.sid", NSHTTPCookieName,
                                       @"s:test", NSHTTPCookieValue,
                                       nil];
     
     _socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [_socketIO connectToHost:@"ec2-54-201-63-66.us-west-2.compute.amazonaws.com" onPort:8080 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"express.sid", @"cookie", nil] withCookieParams:cookieProperties];
+    [_socketIO connectToHost:@"ec2-54-201-216-158.us-west-2.compute.amazonaws.com" onPort:8080 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"express.sid", @"cookie", nil] withCookieParams:cookieProperties];
     
     _userId = 1;
     _isProf = YES;

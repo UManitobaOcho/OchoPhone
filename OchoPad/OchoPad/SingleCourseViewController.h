@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Course.h"
 #import "ProfAddAssignmentViewController.h"
+#import "AddStudentToCourseViewController.h"
 
 @class SingleCourseViewController;
 

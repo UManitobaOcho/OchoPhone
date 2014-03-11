@@ -95,6 +95,10 @@
         [self.navigationController popToRootViewControllerAnimated:YES];
         NSLog(@"Professor Assignment Added Successfully");
     }
+    else if([packet[@"name"] isEqual: @"foundStudNotInCourse"])
+    {
+        NSLog(@"Found Data");
+    }
 }
 
 - (void)didReceiveMemoryWarning
