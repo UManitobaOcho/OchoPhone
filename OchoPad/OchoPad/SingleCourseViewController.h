@@ -31,6 +31,13 @@
 @property (weak, nonatomic) IBOutlet UISwitch *online;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameError;
+@property (weak, nonatomic) IBOutlet UILabel *numberError;
+@property (weak, nonatomic) IBOutlet UILabel *sectionError;
+@property (weak, nonatomic) IBOutlet UILabel *daysError;
+@property (weak, nonatomic) IBOutlet UILabel *timesError;
+
 @property (weak, nonatomic) IBOutlet UITableView *AssignmentList;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 

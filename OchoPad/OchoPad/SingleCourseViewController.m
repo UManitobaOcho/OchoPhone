@@ -128,21 +128,80 @@
     return result;
 }
 
-- (IBAction)update:(id)sender
+- (bool)validateCourseFields
 {
-    Course *course = [[Course alloc] init];
-    course.name = self.courseName.text;
-    course.number = self.courseNumber.text;
-    course.section = self.section.text;
-    course.course_id = self.currCourse.course_id;
+    //reset values
+    bool isValid = YES;
     
-    if([self.online isOn]) {
-        course.class_times = @"Online";
-    } else {
-        course.class_times = [self getClassTimes:tableView];
+    self.nameError.hidden = YES;
+    self.nameError.text = @"";
+    self.numberError.hidden = YES;
+    self.numberError.text = @"";
+    self.sectionError.hidden = YES;
+    self.sectionError.text = @"";
+    self.daysError.hidden = YES;
+    self.daysError.text = @"";
+    self.timesError.hidden = YES;
+    self.timesError.text = @"";
+    
+    //check text fields are formatted correctly
+	if(self.courseName.text.length <= 2) {
+		self.nameError.text = @"Name is to Short";
+        self.nameError.hidden = NO;
+		isValid = NO;
+	}
+    
+    NSString *regex = @"\\w{4} \\d{4}";
+    NSPredicate *testRegex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    if(![testRegex evaluateWithObject:self.courseNumber.text]){
+        self.numberError.text = @"Number must match format: 'EXAM 0000'";
+        self.numberError.hidden = NO;
+		isValid = NO;
     }
     
-    [self.delegate singleCourseViewController:self didUpdateCourse:course];
+    regex = @"\\w\\d{2}";
+    testRegex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    if(![testRegex evaluateWithObject:self.section.text]) {
+        self.sectionError.text = @"Section must match format: 'A00'";
+        self.sectionError.hidden = NO;
+        isValid = NO;
+    }
+    
+    //check that either online switch or atleast one day option is selected
+    if(![self.online isOn] && [tableView indexPathsForSelectedRows] == nil) {
+        self.daysError.text = @"Either Online option must be selected or you must select atleast one day";
+        self.daysError.hidden = NO;
+        isValid = NO;
+    }
+    
+    BOOL timesAreSame = (NSInteger)[self.startTime.date timeIntervalSinceDate:self.endTime.date] == 0 ;
+    //check that start and end times are different
+    if(![self.online isOn] && timesAreSame){
+        self.timesError.text = @"Start and End times must be different";
+        self.timesError.hidden = NO;
+        isValid = NO;
+    }
+    
+    return isValid;
+}
+
+- (IBAction)update:(id)sender
+{
+    if([self validateCourseFields]) {
+        Course *course = [[Course alloc] init];
+        course.name = self.courseName.text;
+        course.number = self.courseNumber.text;
+        course.section = self.section.text;
+        course.course_id = self.currCourse.course_id;
+    
+        if([self.online isOn]) {
+            course.class_times = @"Online";
+        } else {
+            course.class_times = [self getClassTimes:tableView];
+        }
+    
+        [self.delegate singleCourseViewController:self didUpdateCourse:course];
+    }
 }
 
 - (IBAction)cancel:(id)sender

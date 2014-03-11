@@ -150,7 +150,7 @@
                                     <!--2014-03-11 05:22:06 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -168,7 +168,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" id="GHh-iX-c39">
@@ -178,7 +178,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <!--2014-03-11 06:00:00 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -196,9 +196,44 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UL6-Hu-aMf">
+                                <rect key="frame" x="166" y="204" width="607" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Lf-GR-f04">
+                                <rect key="frame" x="166" y="254" width="363" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k1D-Pf-nd5">
+                                <rect key="frame" x="166" y="306" width="363" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5c2-sI-Aex">
+                                <rect key="frame" x="166" y="574" width="582" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKb-zD-TA4">
+                                <rect key="frame" x="166" y="614" width="582" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -221,11 +256,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="SelectEditAssignment" destination="dJB-pz-D1N" id="Kto-Ed-cy2"/>
                         <outlet property="courseName" destination="foY-Gz-seN" id="Byo-Qz-NNk"/>
                         <outlet property="courseNumber" destination="xV8-Gn-b8W" id="IRz-fq-keB"/>
+                        <outlet property="daysError" destination="5c2-sI-Aex" id="gGB-aO-RTi"/>
                         <outlet property="endTime" destination="GHh-iX-c39" id="Xml-se-YdX"/>
+                        <outlet property="nameError" destination="UL6-Hu-aMf" id="zrx-uz-4Jl"/>
+                        <outlet property="numberError" destination="5Lf-GR-f04" id="CBq-q4-h0V"/>
                         <outlet property="online" destination="WU1-59-lm5" id="U6f-Fq-ev3"/>
                         <outlet property="section" destination="vgO-Wt-p2J" id="n8b-oJ-peo"/>
+                        <outlet property="sectionError" destination="k1D-Pf-nd5" id="pse-Eh-sCB"/>
                         <outlet property="startTime" destination="OkT-Kx-25V" id="xt9-k5-mrk"/>
                         <outlet property="tableView" destination="8BQ-0c-GjH" id="zhE-8T-FjR"/>
+                        <outlet property="timesError" destination="UKb-zD-TA4" id="EZn-rM-1c1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5E9-Uh-T7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -591,8 +631,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" id="HCc-jA-UFx">
                                 <rect key="frame" x="410" y="668" width="325" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="416103894.97165799">
-                                    <!--2014-03-10 00:24:54 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="416100294.97165799">
+                                    <!--2014-03-09 23:24:54 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
                                     <data key="data">
@@ -635,6 +675,41 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Dyo-jl-RS7"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M0a-ZD-tmO">
+                                <rect key="frame" x="138" y="136" width="597" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mtU-5z-PCU">
+                                <rect key="frame" x="136" y="185" width="597" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Frt-Wd-Kjf">
+                                <rect key="frame" x="138" y="240" width="597" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SE0-Ji-ph2">
+                                <rect key="frame" x="251" y="282" width="484" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents Error Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cM8-jf-r5y">
+                                <rect key="frame" x="99" y="610" width="607" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -651,13 +726,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="daysError" destination="SE0-Ji-ph2" id="GIN-pC-6S6"/>
                         <outlet property="endTime" destination="HCc-jA-UFx" id="acs-Ml-UJH"/>
+                        <outlet property="nameError" destination="M0a-ZD-tmO" id="ftd-Fg-iwj"/>
                         <outlet property="nameTextField" destination="r2m-7s-GSr" id="OMN-AL-V7q"/>
+                        <outlet property="numberError" destination="mtU-5z-PCU" id="h92-Pk-CxT"/>
                         <outlet property="numberTextField" destination="GvM-x7-K1I" id="fNJ-PR-SaG"/>
                         <outlet property="onlineSwitch" destination="L5y-e5-eTY" id="GvD-ip-Vmo"/>
+                        <outlet property="sectionError" destination="Frt-Wd-Kjf" id="DyS-34-2c2"/>
                         <outlet property="sectionTextField" destination="lf1-3q-96o" id="qd9-xb-GHw"/>
                         <outlet property="startTime" destination="t8h-l3-t5D" id="a8e-xD-V48"/>
                         <outlet property="tableView" destination="3JC-FL-bqV" id="0CJ-eW-Q6X"/>
+                        <outlet property="timesError" destination="cM8-jf-r5y" id="3ct-1Z-ja2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -689,14 +769,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <relationships>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="daysError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="endTime" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="nameError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="numberTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="onlineSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="sectionError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sectionTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startTime" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="timesError" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="CourseViewController" superclassName="UITableViewController">
@@ -705,7 +789,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProfAddAssignmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfAddAssignmentViewController.h"/>
             <relationships>
-                <relationship kind="action" name="FileInputMethod:"/>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="AssignmentNameBox" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="AssignmentNameError" candidateClass="UILabel"/>
@@ -728,11 +811,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="SelectEditAssignment" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="courseName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="courseNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="daysError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="endTime" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="nameError" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numberError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="online" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="section" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sectionError" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startTime" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="timesError" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
