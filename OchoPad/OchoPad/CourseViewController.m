@@ -92,8 +92,8 @@
     }
     else if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
     {
-        [self.navigationController popToRootViewControllerAnimated:YES];
         NSLog(@"Professor Assignment Added Successfully");
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
