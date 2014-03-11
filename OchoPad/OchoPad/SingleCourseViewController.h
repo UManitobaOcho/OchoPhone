@@ -17,13 +17,20 @@
 - (void)singleCourseViewController:(SingleCourseViewController *)controller didUpdateCourse:(Course *)course;
 @end
 
-@interface SingleCourseViewController : UIViewController
+@interface SingleCourseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    IBOutlet UITableView *tableView;
+    
+    NSArray *mainArray;
+}
 @property(nonatomic) Course *currCourse;
 
 @property (strong, nonatomic) IBOutlet UITextField *courseName;
 @property (weak, nonatomic) IBOutlet UITextField *courseNumber;
 @property (weak, nonatomic) IBOutlet UITextField *section;
 @property (weak, nonatomic) IBOutlet UISwitch *online;
+@property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
+@property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
 @property (weak, nonatomic) IBOutlet UITableView *AssignmentList;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 

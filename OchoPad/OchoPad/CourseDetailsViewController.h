@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameError;
+
 @property (nonatomic, weak) id <CourseDetailsViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
