@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Course.h"
+#import "SocketIO.h"
+#import "ComInterface.h"
 
-@interface AddStudentToCourseViewController : UIViewController
+@interface AddStudentToCourseViewController : UIViewController<SocketIOConnectionDelegate>
 
 @property(nonatomic) Course *currCourse;
-@property (weak, nonatomic) IBOutlet UITableView *studentList;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic, strong) NSMutableArray *students;
 @end

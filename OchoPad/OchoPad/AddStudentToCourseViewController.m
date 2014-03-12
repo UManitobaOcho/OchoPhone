@@ -8,6 +8,7 @@
 
 #import "AddStudentToCourseViewController.h"
 #import "ComInterface.h"
+#import "Student.h"
 
 @interface AddStudentToCourseViewController ()
 
@@ -27,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [ComInterface sharedInstance].delegate = self;
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
     
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", nil];
@@ -39,20 +40,67 @@
     
 	// Do any additional setup after loading the view.
 }
+- (void)studentAdd:(NSArray *)response rowCount:(NSInteger)rowCount
+{
+    NSLog(@"Adding student to table");
+    for(int i = 0; i < rowCount; i++)
+    {
+        Student *stud = [[Student alloc] init];
+        stud.username = response[i][@"username"];
+        stud.first_name = response[i][@"first_name"];
+        stud.last_name = response[i][@"last_name"];
+        stud.student_id = response[i][@"student_id"];
+        [self.students addObject:stud];
+        [self.tableView reloadData];
+        //[self.tableView reloadData];
+        
+        //[self.students insertObject:_students atIndex:indexPath.row];
+        //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.students indexOfObject:stud]) inSection:0];
+        //[self.studentList beginUpdates];
+        //[self.studentList
+        //insertRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationBottom];
+        //[self.studentList endUpdates];
+        //[self.studentList insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.students count] - 1) inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView reloadData];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.students count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"HITS");
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCell"];
+    Student *stud = (self.students)[indexPath.row];
+    cell.textLabel.text = stud.username;
+    cell.detailTextLabel.text = stud.first_name;
+    //cell.textLabel.text = [self.students objectAtIndex:indexPath.row];
+    return cell;
+}
+
 - (void)receivedPacket:(id)packet
 {
+    NSArray *response = packet[@"args"][0][@"rows"];
+    NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
     
     if([packet[@"name"] isEqual: @"foundStudNotInCourse"])
     {
-        NSLog(@"Found data");
+        [self studentAdd:response rowCount:count];
     }
 
     
 }
-- (void) addStudent
-{
-    NSLog(@"Made to student");
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
