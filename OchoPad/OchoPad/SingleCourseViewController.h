@@ -39,7 +39,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *daysError;
 @property (weak, nonatomic) IBOutlet UILabel *timesError;
 
-@property (weak, nonatomic) IBOutlet UITableView *AssignmentList;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 
 @property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
