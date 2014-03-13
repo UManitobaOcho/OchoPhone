@@ -93,8 +93,8 @@
     else if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
     {
         NSLog(@"Professor Assignment Added Successfully");
-        //[self dismissViewControllerAnimated:YES completion:nil];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        //[self.navigationController popViewControllerAnimated:YES];
     }
 }
 
