@@ -50,7 +50,7 @@ ProfAssignment *profAssignment;
     NSDate *releaseDateOrig = self.ReleaseDatePicker.date;
     NSDate *dueDateOrig = self.DueDatePicker.date;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"cccc, MMM d, hh:mm aa"];
+    [dateFormat setDateFormat:@"MM/dd/yyyy hh:mm aa"];
     
     // Add text to a file
     //get the documents directory:
@@ -106,7 +106,7 @@ ProfAssignment *profAssignment;
     bool isValid = YES;
 
     NSDateFormatter *df = [NSDateFormatter new];
-    [df setDateFormat:@"dd/MM/yyyy HH:mm"];
+    [df setDateFormat:@"MM/dd/yyyy HH:mm"];
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:[NSTimeZone localTimeZone].secondsFromGMT];
     NSDate *currentDate = [NSDate date];
     
