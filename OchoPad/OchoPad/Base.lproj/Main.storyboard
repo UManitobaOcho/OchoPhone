@@ -54,6 +54,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="yX0-D5-KEG"/>
+                    <connections>
+                        <outlet property="tableView" destination="SQt-G4-4z1" id="Z9v-d4-Xay"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNG-gW-ld7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
