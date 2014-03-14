@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OchoPad/AddStudentToCourseViewController.m"
-            timestampString = "416442408.279582"
+            timestampString = "416509615.546556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OchoPad/AddStudentToCourseViewController.m"
-            timestampString = "416443154.516772"
+            timestampString = "416509615.546556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-receivedPacket:"
             landmarkType = "5">
          </BreakpointContent>
