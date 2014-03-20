@@ -19,11 +19,7 @@
 @end
 
 @interface SingleCourseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    IBOutlet UITableView *tableView;
-    
-    NSArray *mainArray;
-}
+
 @property(nonatomic) Course *currCourse;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *UpdateButton;

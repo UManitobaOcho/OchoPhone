@@ -19,7 +19,6 @@
 		036704D818BD635600D2378F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704B718BD635600D2378F /* Foundation.framework */; };
 		036704D918BD635600D2378F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036704BB18BD635600D2378F /* UIKit.framework */; };
 		036704E118BD635600D2378F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 036704DF18BD635600D2378F /* InfoPlist.strings */; };
-		036704E318BD635600D2378F /* OchoPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704E218BD635600D2378F /* OchoPadTests.m */; };
 		036704EE18BD68B400D2378F /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704ED18BD68B400D2378F /* CourseViewController.m */; };
 		036704F118BD691800D2378F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704F018BD691800D2378F /* Course.m */; };
 		036704F418BE414100D2378F /* CourseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036704F318BE414100D2378F /* CourseDetailsViewController.m */; };
@@ -53,6 +52,7 @@
 		1998A6D518D24547004F7963 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1998A6C818D24547004F7963 /* Default.png */; };
 		1998A6D618D24547004F7963 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1998A6C918D24547004F7963 /* Default@2x.png */; };
 		1998A6D918D245BF004F7963 /* TSQTACalendarRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998A6D818D245BF004F7963 /* TSQTACalendarRowCell.m */; };
+		19A883F818DB65DD00A769A9 /* SingleCourseViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A883F718DB65DD00A769A9 /* SingleCourseViewControllerTest.m */; };
 		2B65C11818D0C9D500377846 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B65C11718D0C9D500377846 /* Student.m */; };
 		2BB71EFB18CF88910006C121 /* AddStudentToCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB71EFA18CF88910006C121 /* AddStudentToCourseViewController.m */; };
 		4C1446D818C8FE4E003BA08D /* SingleCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446D718C8FE4E003BA08D /* SingleCourseViewController.m */; };
@@ -90,7 +90,6 @@
 		036704D618BD635600D2378F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		036704DE18BD635600D2378F /* OchoPadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OchoPadTests-Info.plist"; sourceTree = "<group>"; };
 		036704E018BD635600D2378F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		036704E218BD635600D2378F /* OchoPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OchoPadTests.m; sourceTree = "<group>"; };
 		036704EC18BD68B400D2378F /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
 		036704ED18BD68B400D2378F /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
 		036704EF18BD691800D2378F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 		1998A6C918D24547004F7963 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "extern/TimesSquare/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		1998A6D718D245BF004F7963 /* TSQTACalendarRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSQTACalendarRowCell.h; path = extern/TimesSquare/TSQTACalendarRowCell.h; sourceTree = SOURCE_ROOT; };
 		1998A6D818D245BF004F7963 /* TSQTACalendarRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSQTACalendarRowCell.m; path = extern/TimesSquare/TSQTACalendarRowCell.m; sourceTree = SOURCE_ROOT; };
+		19A883F718DB65DD00A769A9 /* SingleCourseViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCourseViewControllerTest.m; sourceTree = "<group>"; };
 		2B65C11618D0C9D500377846 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		2B65C11718D0C9D500377846 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		2BB71EF918CF88910006C121 /* AddStudentToCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentToCourseViewController.h; sourceTree = "<group>"; };
@@ -274,8 +274,8 @@
 		036704DC18BD635600D2378F /* OchoPadTests */ = {
 			isa = PBXGroup;
 			children = (
-				036704E218BD635600D2378F /* OchoPadTests.m */,
 				036704DD18BD635600D2378F /* Supporting Files */,
+				19A883F718DB65DD00A769A9 /* SingleCourseViewControllerTest.m */,
 			);
 			path = OchoPadTests;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				036704E318BD635600D2378F /* OchoPadTests.m in Sources */,
+				19A883F818DB65DD00A769A9 /* SingleCourseViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
