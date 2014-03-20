@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ReleaseDateError;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *DueDatePicker;
+
 @property (weak, nonatomic) IBOutlet UILabel *DueDateError;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *FileInputSwitcher;

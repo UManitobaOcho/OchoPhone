@@ -94,6 +94,7 @@ ProfAssignment *profAssignment;
 
 - (void)submitAssignment
 {
+    [ComInterface sharedInstance].delegate = self;
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
     
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:profAssignment.AssignmentName, @"assignmentTitle", profAssignment.CourseNumber, @"course", profAssignment.ReleaseDate, @"releaseDate", profAssignment.DueDate, @"dueDate", profAssignment.file, @"file", nil];
@@ -154,6 +155,19 @@ ProfAssignment *profAssignment;
     }
     
     return isValid;
+}
+
+- (void)receivedPacket:(id)packet
+{
+    NSArray *response = packet[@"args"][0][@"rows"];
+    NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
+    
+    if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
+    {
+        NSLog(@"Professor Assignment Added Successfully");
+        //[self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

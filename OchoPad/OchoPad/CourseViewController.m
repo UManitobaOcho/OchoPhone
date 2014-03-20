@@ -31,6 +31,14 @@
 {
     [super viewDidLoad];
     
+    if(self.isProf == YES) {
+        self.AddButton.enabled = YES;
+        NSLog(@"PROFESSOR");
+    } else {
+        self.AddButton.enabled = NO;
+        NSLog(@"STUDENT");
+    }
+    
     //need to set delegate of singleton so that it may callback to the current controller
      [ComInterface sharedInstance].delegate = self;
     _mySocketIO = [ComInterface sharedInstance].socketIO;
@@ -46,7 +54,15 @@
 }
 
 - (void)fillCourseList:(NSArray *)response rowCount:(NSInteger)rowCount
-{    
+{
+    NSIndexPath *indexP;
+    
+    while([self.courses count] > 0) {
+        indexP = [NSIndexPath indexPathForRow:([self.courses count] - 1) inSection:0];
+        [self.courses removeObjectAtIndex:0];
+        [[self tableView] deleteRowsAtIndexPaths:@[indexP] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
     for (int i = 0; i < rowCount; i++) {
         NSLog(@"received response >>> data: %@", response[i]);
         
@@ -90,12 +106,12 @@
         _courseToAdd = nil;
         NSLog(@"Course updated successfully");
     }
-    else if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
-    {
-        NSLog(@"Professor Assignment Added Successfully");
-        [self dismissViewControllerAnimated:YES completion:nil];
+    //else if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
+    //{
+      //  NSLog(@"Professor Assignment Added Successfully");
+        //[self dismissViewControllerAnimated:YES completion:nil];
         //[self.navigationController popViewControllerAnimated:YES];
-    }
+    //}
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,6 +170,7 @@
         SingleCourseViewController *singleCourseViewController = [navigationController viewControllers][0];
         singleCourseViewController.delegate = self;
         singleCourseViewController.currCourse = (self.courses)[self.selectedRow];
+        singleCourseViewController.isProf = self.isProf;
     }
 }
 
