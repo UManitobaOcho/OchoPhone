@@ -26,12 +26,15 @@
 }
 @property(nonatomic) Course *currCourse;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *UpdateButton;
+
 @property (strong, nonatomic) IBOutlet UITextField *courseName;
 @property (weak, nonatomic) IBOutlet UITextField *courseNumber;
 @property (weak, nonatomic) IBOutlet UITextField *section;
 @property (weak, nonatomic) IBOutlet UISwitch *online;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewer;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameError;
 @property (weak, nonatomic) IBOutlet UILabel *numberError;
@@ -39,9 +42,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *daysError;
 @property (weak, nonatomic) IBOutlet UILabel *timesError;
 
+@property (weak, nonatomic) IBOutlet UIButton *StudentButton;
+@property (weak, nonatomic) IBOutlet UIButton *AssignmentButton;
+@property (weak, nonatomic) IBOutlet UILabel *AssignmentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *StudentLabel;
+
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 
 @property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
+
+@property bool *isProf;
 
 - (IBAction)update:(id)sender;
 

@@ -59,6 +59,7 @@
 		4C1446DB18C906B4003BA08D /* ComInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1446DA18C906B4003BA08D /* ComInterface.m */; };
 		D3515DB218C9293500C6A1D7 /* ProfAddAssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */; };
 		D3515DB518C94A6900C6A1D7 /* ProfAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */; };
+		D394AB3218DB7F3B00619AAF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394AB3118DB7F3B00619AAF /* LoginViewController.m */; };
 		F4735BA218D99D7300E60CC6 /* GradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4735BA118D99D7300E60CC6 /* GradeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,8 @@
 		D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfAddAssignmentViewController.m; sourceTree = "<group>"; };
 		D3515DB318C94A6900C6A1D7 /* ProfAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfAssignment.h; sourceTree = "<group>"; };
 		D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfAssignment.m; sourceTree = "<group>"; };
+		D394AB3018DB7F3B00619AAF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D394AB3118DB7F3B00619AAF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F4735BA018D99D7300E60CC6 /* GradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeViewController.h; sourceTree = "<group>"; };
 		F4735BA118D99D7300E60CC6 /* GradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +230,8 @@
 				036704C618BD635600D2378F /* AppDelegate.h */,
 				036704C718BD635600D2378F /* AppDelegate.m */,
 				036704C918BD635600D2378F /* Main.storyboard */,
+				D394AB3018DB7F3B00619AAF /* LoginViewController.h */,
+				D394AB3118DB7F3B00619AAF /* LoginViewController.m */,
 				2BB71EF918CF88910006C121 /* AddStudentToCourseViewController.h */,
 				2BB71EFA18CF88910006C121 /* AddStudentToCourseViewController.m */,
 				2B65C11618D0C9D500377846 /* Student.h */,
@@ -473,6 +478,7 @@
 				03670B8018BE5F0000D2378F /* SocketIOTransportXHR.m in Sources */,
 				036710D818BE5F0000D2378F /* NSData+SRB64Additions.m in Sources */,
 				036704EE18BD68B400D2378F /* CourseViewController.m in Sources */,
+				D394AB3218DB7F3B00619AAF /* LoginViewController.m in Sources */,
 				1998A6B518D239CD004F7963 /* TSQCalendarMonthHeaderCell.m in Sources */,
 				036704C818BD635600D2378F /* AppDelegate.m in Sources */,
 				036704C418BD635600D2378F /* main.m in Sources */,

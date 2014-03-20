@@ -39,6 +39,40 @@
 {
     [super viewDidLoad];
     
+    if(self.isProf == YES) {
+        self.UpdateButton.enabled = YES;
+        self.courseName.enabled = YES;
+        self.courseNumber.enabled = YES;
+        self.section.enabled = YES;
+        self.online.enabled = YES;
+        self.startTime.enabled = YES;
+        self.endTime.enabled = YES;
+        self.startTime.userInteractionEnabled = YES;
+        self.endTime.userInteractionEnabled = YES;
+        self.tableViewer.userInteractionEnabled = YES;
+        self.StudentButton.hidden = NO;
+        self.AssignmentButton.hidden = NO;
+        self.StudentLabel.hidden = NO;
+        self.AssignmentLabel.hidden = NO;
+        NSLog(@"PROFESSOR");
+    } else {
+        self.UpdateButton.enabled = NO;
+        self.courseName.enabled = NO;
+        self.courseNumber.enabled = NO;
+        self.section.enabled = NO;
+        self.online.enabled = NO;
+        self.startTime.enabled = NO;
+        self.endTime.enabled = NO;
+        self.startTime.userInteractionEnabled = NO;
+        self.endTime.userInteractionEnabled = NO;
+        self.tableViewer.userInteractionEnabled = NO;
+        self.StudentButton.hidden = YES;
+        self.AssignmentButton.hidden = YES;
+        self.StudentLabel.hidden = YES;
+        self.AssignmentLabel.hidden = YES;
+        NSLog(@"STUDENT");
+    }
+    
     mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
     
     _courseName.text = self.currCourse.name;

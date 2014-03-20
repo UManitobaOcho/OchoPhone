@@ -15,4 +15,8 @@
 
 @property (nonatomic, strong) NSMutableArray *courses;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *AddButton;
+
+@property bool *isProf;
+
 @end
