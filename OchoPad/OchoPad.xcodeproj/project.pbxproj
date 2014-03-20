@@ -60,6 +60,7 @@
 		D3515DB218C9293500C6A1D7 /* ProfAddAssignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB118C9293500C6A1D7 /* ProfAddAssignmentViewController.m */; };
 		D3515DB518C94A6900C6A1D7 /* ProfAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */; };
 		D394AB3218DB7F3B00619AAF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394AB3118DB7F3B00619AAF /* LoginViewController.m */; };
+		D394AB3418DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D394AB3318DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m */; };
 		F4735BA218D99D7300E60CC6 /* GradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4735BA118D99D7300E60CC6 /* GradeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		D3515DB418C94A6900C6A1D7 /* ProfAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfAssignment.m; sourceTree = "<group>"; };
 		D394AB3018DB7F3B00619AAF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D394AB3118DB7F3B00619AAF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D394AB3318DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfAddAssignmentViewControllerTest.m; sourceTree = "<group>"; };
 		F4735BA018D99D7300E60CC6 /* GradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeViewController.h; sourceTree = "<group>"; };
 		F4735BA118D99D7300E60CC6 /* GradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +278,7 @@
 			children = (
 				036704DD18BD635600D2378F /* Supporting Files */,
 				19A883F718DB65DD00A769A9 /* SingleCourseViewControllerTest.m */,
+				D394AB3318DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m */,
 			);
 			path = OchoPadTests;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D394AB3418DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m in Sources */,
 				19A883F818DB65DD00A769A9 /* SingleCourseViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

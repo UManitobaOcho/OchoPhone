@@ -50,6 +50,7 @@
 @property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
 
 @property bool *isProf;
+
 - (NSString *)getClassTimes:(UITableView *)table;
 - (bool)validateCourseFields;
 
