@@ -73,7 +73,7 @@
         NSLog(@"STUDENT");
     }
     
-    mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
+    _mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
     
     _courseName.text = self.currCourse.name;
     _courseNumber.text = self.currCourse.number;
