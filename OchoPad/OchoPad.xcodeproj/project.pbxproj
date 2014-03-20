@@ -33,6 +33,7 @@
 		0367111F18BE610B00D2378F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367111E18BE610B00D2378F /* Security.framework */; };
 		0367112118BE612100D2378F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112018BE612100D2378F /* libicucore.dylib */; };
 		0367112318BE612A00D2378F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367112218BE612A00D2378F /* CFNetwork.framework */; };
+		195D260618DB9975005A97B8 /* CourseDetailsViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 195D260518DB9975005A97B8 /* CourseDetailsViewControllerTest.m */; };
 		1998A6B518D239CD004F7963 /* TSQCalendarMonthHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998A6AC18D239CD004F7963 /* TSQCalendarMonthHeaderCell.m */; };
 		1998A6B618D239CD004F7963 /* TSQCalendarRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998A6AD18D239CD004F7963 /* TSQCalendarRowCell.m */; };
 		1998A6B718D239CD004F7963 /* TSQCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998A6B118D239CD004F7963 /* TSQCalendarCell.m */; };
@@ -118,6 +119,7 @@
 		0367111E18BE610B00D2378F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0367112018BE612100D2378F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		0367112218BE612A00D2378F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		195D260518DB9975005A97B8 /* CourseDetailsViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailsViewControllerTest.m; sourceTree = "<group>"; };
 		1998A6AB18D239CD004F7963 /* TSQCalendarRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSQCalendarRowCell.h; sourceTree = "<group>"; };
 		1998A6AC18D239CD004F7963 /* TSQCalendarMonthHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQCalendarMonthHeaderCell.m; sourceTree = "<group>"; };
 		1998A6AD18D239CD004F7963 /* TSQCalendarRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQCalendarRowCell.m; sourceTree = "<group>"; };
