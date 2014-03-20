@@ -17,17 +17,16 @@
 @end
 
 @interface CourseDetailsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    IBOutlet UITableView *tableView;
-    
-    NSArray *mainArray;
-}
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *numberTextField;
-@property (weak, nonatomic) IBOutlet UITextField *sectionTextField;
-@property (weak, nonatomic) IBOutlet UISwitch *onlineSwitch;
-@property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
-@property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *mainArray;
+
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *numberTextField;
+@property (strong, nonatomic) IBOutlet UITextField *sectionTextField;
+@property (strong, nonatomic) IBOutlet UISwitch *onlineSwitch;
+@property (strong, nonatomic) IBOutlet UIDatePicker *startTime;
+@property (strong, nonatomic) IBOutlet UIDatePicker *endTime;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameError;
 @property (weak, nonatomic) IBOutlet UILabel *numberError;
@@ -37,6 +36,8 @@
 
 @property (nonatomic, weak) id <CourseDetailsViewControllerDelegate> delegate;
 
+- (NSString *)getClassTimes:(UITableView *)table;
+- (bool)validateCourseFields;
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
 
