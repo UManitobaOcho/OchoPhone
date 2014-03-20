@@ -281,6 +281,7 @@
 				036704DD18BD635600D2378F /* Supporting Files */,
 				19A883F718DB65DD00A769A9 /* SingleCourseViewControllerTest.m */,
 				D394AB3318DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m */,
+				195D260518DB9975005A97B8 /* CourseDetailsViewControllerTest.m */,
 			);
 			path = OchoPadTests;
 			sourceTree = "<group>";
@@ -513,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D394AB3418DB9EFC00619AAF /* ProfAddAssignmentViewControllerTest.m in Sources */,
+				195D260618DB9975005A97B8 /* CourseDetailsViewControllerTest.m in Sources */,
 				19A883F818DB65DD00A769A9 /* SingleCourseViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
