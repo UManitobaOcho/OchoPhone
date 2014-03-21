@@ -29,6 +29,7 @@ ProfAssignment *profAssignment;
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     self.AssignmentNameError.hidden = YES;
     self.ReleaseDateError.hidden = YES;
     self.DueDateError.hidden = YES;
@@ -37,7 +38,6 @@ ProfAssignment *profAssignment;
     self.ReleaseDateError.text = @" ";
     self.DueDateError.text = @" ";
     self.FileInputError.text = @" ";
-    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,8 +78,14 @@ ProfAssignment *profAssignment;
     
     if(self.FileInputSwitcher.selectedSegmentIndex == 0){
         profAssignment.file = [NSString stringWithContentsOfFile:fileName];
+        profAssignment.name = [NSString stringWithFormat:@"%@%@", [profAssignment.AssignmentName stringByReplacingOccurrencesOfString:@" " withString:@"_"], @".txt"];
+        profAssignment.type = @"text/plain";
+        profAssignment.size = [NSString stringWithFormat: @"%d", profAssignment.file.length];
     }else{
         profAssignment.file = nil;
+        profAssignment.name = nil;
+        profAssignment.type = nil;
+        profAssignment.size = nil;
     }
     
     if([self verifyAssignment] == YES) {
@@ -97,7 +103,16 @@ ProfAssignment *profAssignment;
     [ComInterface sharedInstance].delegate = self;
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
     
-    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:profAssignment.AssignmentName, @"assignmentTitle", profAssignment.CourseNumber, @"course", profAssignment.ReleaseDate, @"releaseDate", profAssignment.DueDate, @"dueDate", profAssignment.file, @"file", nil];
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          profAssignment.AssignmentName, @"assignmentTitle",
+                          profAssignment.CourseNumber, @"course",
+                          profAssignment.ReleaseDate, @"releaseDate",
+                          profAssignment.DueDate, @"dueDate",
+                          profAssignment.name, @"name",
+                          profAssignment.type, @"type",
+                          profAssignment.size, @"size",
+                          profAssignment.file, @"file",
+                          nil];
     
     [mySocketIO sendEvent:@"profAddAssignment" withData:data];
 }
@@ -105,7 +120,7 @@ ProfAssignment *profAssignment;
 - (bool)verifyAssignment
 {
     bool isValid = YES;
-
+    
     NSDateFormatter *df = [NSDateFormatter new];
     [df setDateFormat:@"MM/dd/yyyy HH:mm"];
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:[NSTimeZone localTimeZone].secondsFromGMT];
@@ -124,8 +139,8 @@ ProfAssignment *profAssignment;
     NSLog(@"%@",self.DueDatePicker.date);
     NSLog(@"%@",currentDate);
     
-	if(self.AssignmentNameBox.text.length <= 1) {
-		self.AssignmentNameError.text = @"Name is to Short";
+	if(self.AssignmentNameBox.text.length < 1) {
+		self.AssignmentNameError.text = @"Must Enter a Name";
         self.AssignmentNameError.hidden = NO;
 		isValid = NO;
 	}
