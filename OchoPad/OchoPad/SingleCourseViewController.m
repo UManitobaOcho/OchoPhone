@@ -39,7 +39,41 @@
 {
     [super viewDidLoad];
     
-    mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
+    if(self.isProf == YES) {
+        self.UpdateButton.enabled = YES;
+        self.courseName.enabled = YES;
+        self.courseNumber.enabled = YES;
+        self.section.enabled = YES;
+        self.online.enabled = YES;
+        self.startTime.enabled = YES;
+        self.endTime.enabled = YES;
+        self.startTime.userInteractionEnabled = YES;
+        self.endTime.userInteractionEnabled = YES;
+        self.tableViewer.userInteractionEnabled = YES;
+        self.StudentButton.hidden = NO;
+        self.AssignmentButton.hidden = NO;
+        self.StudentLabel.hidden = NO;
+        self.AssignmentLabel.hidden = NO;
+        NSLog(@"PROFESSOR");
+    } else {
+        self.UpdateButton.enabled = NO;
+        self.courseName.enabled = NO;
+        self.courseNumber.enabled = NO;
+        self.section.enabled = NO;
+        self.online.enabled = NO;
+        self.startTime.enabled = NO;
+        self.endTime.enabled = NO;
+        self.startTime.userInteractionEnabled = NO;
+        self.endTime.userInteractionEnabled = NO;
+        self.tableViewer.userInteractionEnabled = NO;
+        self.StudentButton.hidden = YES;
+        self.AssignmentButton.hidden = YES;
+        self.StudentLabel.hidden = YES;
+        self.AssignmentLabel.hidden = YES;
+        NSLog(@"STUDENT");
+    }
+    
+    _mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
     
     _courseName.text = self.currCourse.name;
     _courseNumber.text = self.currCourse.number;
@@ -61,15 +95,15 @@
     for(int i = 0; i < [split[0] length]; i++) {
         NSString *day = [split[0] substringWithRange:NSMakeRange(i, 1)];
         if([day isEqualToString:@"M"]) {
-            [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
         } else if([day isEqualToString:@"T"]) {
-            [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
         } else if([day isEqualToString:@"W"]) {
-            [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
         } else if([day isEqualToString:@"R"]) {
-            [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
         } else if([day isEqualToString:@"F"]) {
-            [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
         }
     }
     
@@ -83,13 +117,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [mainArray count];
+    return [_mainArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
-    cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [_mainArray objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -172,7 +206,7 @@
     }
     
     //check that either online switch or atleast one day option is selected
-    if(![self.online isOn] && [tableView indexPathsForSelectedRows] == nil) {
+    if(![self.online isOn] && [_tableView indexPathsForSelectedRows] == nil) {
         self.daysError.text = @"Either Online option must be selected or you must select atleast one day";
         self.daysError.hidden = NO;
         isValid = NO;
@@ -201,7 +235,7 @@
         if([self.online isOn]) {
             course.class_times = @"Online";
         } else {
-            course.class_times = [self getClassTimes:tableView];
+            course.class_times = [self getClassTimes:_tableView];
         }
     
         [self.delegate singleCourseViewController:self didUpdateCourse:course];

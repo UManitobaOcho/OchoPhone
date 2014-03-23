@@ -19,30 +19,39 @@
 @end
 
 @interface SingleCourseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    IBOutlet UITableView *tableView;
-    
-    NSArray *mainArray;
-}
+
 @property(nonatomic) Course *currCourse;
 
-@property (strong, nonatomic) IBOutlet UITextField *courseName;
-@property (weak, nonatomic) IBOutlet UITextField *courseNumber;
-@property (weak, nonatomic) IBOutlet UITextField *section;
-@property (weak, nonatomic) IBOutlet UISwitch *online;
-@property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
-@property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *UpdateButton;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *mainArray;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameError;
-@property (weak, nonatomic) IBOutlet UILabel *numberError;
-@property (weak, nonatomic) IBOutlet UILabel *sectionError;
-@property (weak, nonatomic) IBOutlet UILabel *daysError;
-@property (weak, nonatomic) IBOutlet UILabel *timesError;
+@property (strong, nonatomic) IBOutlet UITextField *courseName;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewer;
+@property (strong, nonatomic) IBOutlet UITextField *courseNumber;
+@property (strong, nonatomic) IBOutlet UITextField *section;
+@property (strong, nonatomic) IBOutlet UISwitch *online;
+@property (strong, nonatomic) IBOutlet UIDatePicker *startTime;
+@property (strong, nonatomic) IBOutlet UIDatePicker *endTime;
+@property (strong, nonatomic) IBOutlet UILabel *nameError;
+@property (strong, nonatomic) IBOutlet UILabel *numberError;
+@property (strong, nonatomic) IBOutlet UILabel *sectionError;
+@property (strong, nonatomic) IBOutlet UILabel *daysError;
+@property (strong, nonatomic) IBOutlet UILabel *timesError;
+
+@property (weak, nonatomic) IBOutlet UIButton *StudentButton;
+@property (weak, nonatomic) IBOutlet UIButton *AssignmentButton;
+@property (weak, nonatomic) IBOutlet UILabel *AssignmentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *StudentLabel;
+
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
 
 @property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
 
-- (IBAction)update:(id)sender;
+@property bool *isProf;
+
+- (NSString *)getClassTimes:(UITableView *)table;
+- (bool)validateCourseFields;
 
 @end

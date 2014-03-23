@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Course.h"
 #import "CourseViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate{
     NSMutableArray *_courses;
@@ -29,9 +30,9 @@
 //    [_courses addObject:course];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    CourseViewController *courseViewController = [navigationController viewControllers][0];
-    courseViewController.courses = _courses;
-
+    LoginViewController *loginViewController = [navigationController viewControllers][0];
+    loginViewController.courses = _courses;
+    
     return YES;
 }
 							

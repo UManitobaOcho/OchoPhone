@@ -28,19 +28,19 @@
 {
     [super viewDidLoad];
     
-    mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
+    _mainArray = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", nil];
 	// Do any additional setup after loading the view.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [mainArray count];
+    return [_mainArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
-    cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"thisCell"];
+    cell.textLabel.text = [_mainArray objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -123,7 +123,7 @@
     }
     
     //check that either online switch or atleast one day option is selected
-    if(![self.onlineSwitch isOn] && [tableView indexPathsForSelectedRows] == nil) {
+    if(![self.onlineSwitch isOn] && [_tableView indexPathsForSelectedRows] == nil) {
         self.daysError.text = @"Either Online option must be selected or you must select atleast one day";
         self.daysError.hidden = NO;
         isValid = NO;
@@ -151,7 +151,7 @@
         if([self.onlineSwitch isOn]) {
             course.class_times = @"Online";
         } else {
-            course.class_times = [self getClassTimes:tableView];
+            course.class_times = [self getClassTimes:_tableView];
         }
     
         [self.delegate courseDetailsViewController:self didAddCourse:course];
