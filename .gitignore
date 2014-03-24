@@ -12,5 +12,6 @@
 *.xcworkspace
 !default.xcworkspace
 *.xcuserdata
+**/xcuserdata/**/*.xcuserdata
 profile
 *.moved-aside
