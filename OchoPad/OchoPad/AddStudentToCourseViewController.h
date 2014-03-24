@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic) Course *currCourse;
 
+- (IBAction)done:(id)sender;
 @property (nonatomic, strong) NSMutableArray *students;
 @end

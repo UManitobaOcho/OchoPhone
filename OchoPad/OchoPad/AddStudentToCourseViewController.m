@@ -51,7 +51,7 @@
         stud.last_name = response[i][@"last_name"];
         stud.student_id = response[i][@"student_id"];
         [self.students addObject:stud];
-
+        
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.students count]-1) inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
@@ -88,6 +88,7 @@
     {
         [self studentAdd:response rowCount:count];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,4 +97,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)done:(id)sender {
+    NSLog(@"TEST");
+    NSString *stud = @"";
+    NSArray *selected = [self.tableView indexPathsForSelectedRows];
+    for(id row in selected) {
+        NSInteger r = [row row];
+        Student *studTwo = [self.students objectAtIndex:r];
+        stud = [stud stringByAppendingString:studTwo.student_id];
+        stud = [stud stringByAppendingString:@","];
+    }
+    NSLog(stud);
+    //    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+    //    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", stud, @"student", nil];
+    //
+    //    [mySocketIO sendEvent:@"addStudentToCourse" withData:data];
+    //    NSLog(@"successful");
+}
 @end
