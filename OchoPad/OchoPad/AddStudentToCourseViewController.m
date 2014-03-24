@@ -78,19 +78,6 @@
     return cell;
 }
 
-
-- (void)receivedPacket:(id)packet
-{
-    NSArray *response = packet[@"args"][0][@"rows"];
-    NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
-    
-    if([packet[@"name"] isEqual: @"foundStudNotInCourse"])
-    {
-        [self studentAdd:response rowCount:count];
-    }
-    
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -98,7 +85,6 @@
 }
 
 - (IBAction)done:(id)sender {
-    NSLog(@"TEST");
     NSString *stud = @"";
     NSArray *selected = [self.tableView indexPathsForSelectedRows];
     for(id row in selected) {
@@ -107,11 +93,37 @@
         stud = [stud stringByAppendingString:studTwo.student_id];
         stud = [stud stringByAppendingString:@","];
     }
-    NSLog(stud);
-    //    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
-    //    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", stud, @"student", nil];
-    //
-    //    [mySocketIO sendEvent:@"addStudentToCourse" withData:data];
-    //    NSLog(@"successful");
+    //NSLog(stud);
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", stud, @"student", nil];
+    [self sumbitStudent:data];
+    
+    
+}
+- (void)sumbitStudent:(NSDictionary *) data
+{
+    [ComInterface sharedInstance].delegate = self;
+    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+
+    [mySocketIO sendEvent:@"addStudentToCourse" withData:data];
+    NSLog(@"successful sending data to server");
+    
+}
+- (void)receivedPacket:(id)packet
+{
+    NSLog(packet[@"name"]);
+    NSLog(@"TESTTS ETS ETSE TS ET ET ET\n\n\n");
+    
+    
+    if([packet[@"name"] isEqual: @"foundStudNotInCourse"])
+    {
+        NSArray *response = packet[@"args"][0][@"rows"];
+        NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
+        [self studentAdd:response rowCount:count];
+    }
+    else if([packet[@"name"] isEqual: @"addedStudent"])
+    {
+        NSLog(@"The student was added");
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 @end
