@@ -1,20 +1,20 @@
 //
-//  AddStudentToCourseViewController.m
+//  RemoveStudentToCourseViewController.m
 //  OchoPad
 //
-//  Created by Jasdeep Singh Bhumber on 2014-03-11.
+//  Created by Jasdeep Singh Bhumber on 2014-03-24.
 //  Copyright (c) 2014 Team Ocho (8). All rights reserved.
 //
 
-#import "AddStudentToCourseViewController.h"
+#import "RemoveStudentToCourseViewController.h"
 #import "ComInterface.h"
 #import "Student.h"
 
-@interface AddStudentToCourseViewController ()
+@interface RemoveStudentToCourseViewController ()
 
 @end
 
-@implementation AddStudentToCourseViewController
+@implementation RemoveStudentToCourseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,12 +34,11 @@
     self.students = [[NSMutableArray alloc] init];
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", nil];
     
-    [mySocketIO sendEvent:@"getStudNotInCourse" withData:data];
+    [mySocketIO sendEvent:@"getStudInCourse" withData:data];
     [self.tableView reloadData];
     NSLog(@"successful");
-    
-	// Do any additional setup after loading the view.
 }
+
 - (void)studentAdd:(NSArray *)response rowCount:(NSInteger)rowCount
 {
     NSLog(@"Adding student to table");
@@ -96,27 +95,25 @@
     //NSLog(stud);
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", stud, @"student", nil];
     [self sumbitStudent:data];
-    
-    
 }
 - (void)sumbitStudent:(NSDictionary *) data
 {
     [ComInterface sharedInstance].delegate = self;
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
-
-    [mySocketIO sendEvent:@"addStudentToCourse" withData:data];
+    
+    [mySocketIO sendEvent:@"removeStudentToCourse" withData:data];
     NSLog(@"successful sending data to server");
     
 }
 - (void)receivedPacket:(id)packet
-{ 
-    if([packet[@"name"] isEqual: @"foundStudNotInCourse"])
+{
+    if([packet[@"name"] isEqual: @"foundStudInCourse"])
     {
         NSArray *response = packet[@"args"][0][@"rows"];
         NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
         [self studentAdd:response rowCount:count];
     }
-    else if([packet[@"name"] isEqual: @"addedStudent"])
+    else if([packet[@"name"] isEqual: @"removedStudent"])
     {
         NSLog(@"The student was added");
         [self.navigationController popViewControllerAnimated:YES];
