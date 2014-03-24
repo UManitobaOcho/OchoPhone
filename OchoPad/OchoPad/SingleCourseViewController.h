@@ -10,6 +10,7 @@
 #import "Course.h"
 #import "ProfAddAssignmentViewController.h"
 #import "AddStudentToCourseViewController.h"
+#import "RemoveStudentToCourseViewController.h"
 
 @class SingleCourseViewController;
 
