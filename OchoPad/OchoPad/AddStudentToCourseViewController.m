@@ -109,11 +109,7 @@
     
 }
 - (void)receivedPacket:(id)packet
-{
-    NSLog(packet[@"name"]);
-    NSLog(@"TESTTS ETS ETSE TS ET ET ET\n\n\n");
-    
-    
+{ 
     if([packet[@"name"] isEqual: @"foundStudNotInCourse"])
     {
         NSArray *response = packet[@"args"][0][@"rows"];
