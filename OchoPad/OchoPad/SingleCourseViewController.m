@@ -58,6 +58,8 @@
         self.AssignmentButton.hidden = NO;
         self.StudentLabel.hidden = NO;
         self.AssignmentLabel.hidden = NO;
+        self.ClassListButton.hidden = NO;
+        self.ClassListLabel.hidden = NO;
         NSLog(@"PROFESSOR");
     } else {
         self.UpdateButton.enabled = NO;
@@ -74,6 +76,8 @@
         self.AssignmentButton.hidden = YES;
         self.StudentLabel.hidden = YES;
         self.AssignmentLabel.hidden = YES;
+        self.ClassListButton.hidden = YES;
+        self.ClassListLabel.hidden = YES;
         NSLog(@"STUDENT");
     }
     

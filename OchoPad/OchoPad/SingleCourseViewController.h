@@ -44,6 +44,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *AssignmentButton;
 @property (weak, nonatomic) IBOutlet UILabel *AssignmentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *StudentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ClassListLabel;
+@property (weak, nonatomic) IBOutlet UIButton *ClassListButton;
 
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SelectEditAssignment;
