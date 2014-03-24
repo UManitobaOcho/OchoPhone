@@ -41,4 +41,6 @@
 
 - (bool)verifyAssignment;
 
+- (IBAction)FileInputMethod:(id)sender;
+
 @end

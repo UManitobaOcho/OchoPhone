@@ -34,6 +34,7 @@ ProfAssignment *profAssignment;
     self.ReleaseDateError.hidden = YES;
     self.DueDateError.hidden = YES;
     self.FileInputError.hidden = YES;
+    self.UploadMessage.hidden = YES;
     self.AssignmentNameError.text = @" ";
     self.ReleaseDateError.text = @" ";
     self.DueDateError.text = @" ";

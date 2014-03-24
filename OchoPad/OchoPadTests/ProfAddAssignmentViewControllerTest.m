@@ -91,12 +91,12 @@
 {
     _vc = [[ProfAddAssignmentViewController alloc] initWithNibName:@"ProfAddAssignmentViewController" bundle:nil];
     
-    [_vc viewDidLoad];
-    
     _vc.FileInputError = [[UILabel alloc] init];
     _vc.FileInputBox = [[UITextView alloc] init];
     
-    _vc.FileInputBox.text = @"Question1: What is a SQL Statement?";
+   [_vc viewDidLoad];
+    
+    _vc.FileInputBox.text = @"Question1: What is an SQL Statement?";
     [_vc verifyAssignment];
     XCTAssertTrue([_vc.FileInputError.text isEqualToString:@" "]);
     
@@ -123,6 +123,30 @@
     _vc.FileInputBox.text = @"Question#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\nQuestion#1\nWhat is the square root of pi?\n\nQuestion#2\nWhat is the log base 2 of e?\n\n";
     [_vc verifyAssignment];
     XCTAssertTrue([_vc.FileInputError.text isEqualToString:@" "]);
+}
+
+- (void)testAssignmentContentsSwitcher
+{
+    _vc = [[ProfAddAssignmentViewController alloc] initWithNibName:@"ProfAddAssignmentViewController" bundle:nil];
+    
+    _vc.FileInputSwitcher = [[UISegmentedControl alloc] init];
+    _vc.FileInputBox = [[UITextView alloc] init];
+    _vc.UploadMessage = [[UILabel alloc] init];
+    
+    [_vc viewDidLoad];
+ 
+    XCTAssertTrue(_vc.UploadMessage.hidden);
+    XCTAssertTrue(!_vc.FileInputBox.hidden);
+    
+    [_vc FileInputMethod:0];
+    
+    XCTAssertTrue(!_vc.UploadMessage.hidden);
+    XCTAssertTrue(_vc.FileInputBox.hidden);
+    
+    [_vc FileInputMethod:0];
+    
+    XCTAssertTrue(_vc.UploadMessage.hidden);
+    XCTAssertTrue(!_vc.FileInputBox.hidden);
 }
 
 @end
