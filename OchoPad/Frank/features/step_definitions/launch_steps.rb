@@ -15,6 +15,10 @@ Given /^I launch the app using iOS (\d\.\d)$/ do |sdk|
   launch_app app_path, sdk
 end
 
+Given /^I launch the app using the (iphone|ipad) simulator$/ do |version|
+  launch_app app_path, nil, version
+end
+
 Given /^I launch the app using iOS (\d\.\d) and the (iphone|ipad) simulator$/ do |sdk, version|
   launch_app app_path, sdk, version
 end
