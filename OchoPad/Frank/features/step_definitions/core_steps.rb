@@ -8,7 +8,17 @@ Then /^I should see a button label with the text "([^"]*)"$/ do |expected_text|
   	check_element_exists( "view:'UIButtonLabel' text:'#{expected_text}'" )
 end
 
+Then /^I should see a table view label with the text "([^"]*)"$/ do |expected_text|
+	check_element_exists( "view:'UITableViewLabel' text:'#{expected_text}'" )
+end
+
 # -- touch -- #
+
+# table cells
+When /^I touch the table cell with label marked "([^"]*)"$/ do |mark|
+	quote = get_selector_quote(mark)
+	touch("tableViewCell label marked:#{quote}#{mark}#{quote}")
+end
 
 # -- input -- #
 
