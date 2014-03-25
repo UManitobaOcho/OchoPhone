@@ -77,30 +77,51 @@ Scenario: Professor should be able to update course
 	When I delete 16 characters from the text field with label "Name" using the keyboard
 	When I type "Scientific Computing" into the text field with label "Name" using keyboard
 	
-	When I touch "Update" if exists
-		And I pause briefly for demonstration purposes
-		Then I should see a label with the text "Introduction to Scientific Computing"
-		Then I should see a table view label with the text "Comp 2190"
+	When I touch "Update"
+		#And I pause briefly for demonstration purposes
+		#Then I should see a label with the text "Introduction to Scientific Computing"
+		#Then I should see a table view label with the text "Comp 2190"
 
-Scenario: Professor should be able to add student & retrieve student list
-	When I touch the table cell with label marked "Introduction to Scientific Computing"
-	And I pause briefly for demonstration purposes
+#Scenario: Professor should be able to add student & retrieve student list
+#	When I touch the table cell with label marked "Introduction to Scientific Computing"
+#	And I pause briefly for demonstration purposes
 	
 	# We should get an empty list back, since the course is newly created
-	When I touch "classListInfo" if exists
-		And I pause briefly for demonstration purposes
+#	When I touch "classListInfo" if exists
+#		And I pause briefly for demonstration purposes
 	
-	When I touch "Course Page" if exists
-		And I pause briefly for demonstration purposes
-		When I touch "addStudent" if exists
-		And I pause briefly for demonstration purposes
-		When I touch "umplishk" if exists
-		And I pause briefly for demonstration purposes
-		When I touch the button marked "Add"
-		And I pause briefly for demonstration purposes
-		When I touch "classListInfo" if exists
-			When I touch "umplishk" if exists
-			And I pause briefly for demonstration purposes
+#	When I touch "Course Page" if exists
+#		And I pause briefly for demonstration purposes
+#		When I touch "addStudent" if exists
+#		And I pause briefly for demonstration purposes
+#		When I touch "umplishk" if exists
+#		And I pause briefly for demonstration purposes
+#		When I touch the button marked "Add"
+#		And I pause briefly for demonstration purposes
+#		When I touch "classListInfo" if exists
+#		And I pause briefly for demonstration purposes
+#		When I touch "umplishk" if exists
+#		And I pause briefly for demonstration purposes
+#		When I touch the button marked "Delete"
+#		And I pause briefly for demonstration purposes
+#		When I touch "classListInfo" if exists
+#		And I pause briefly for demonstration purposes
+#		Then I navigate back
+#		When I touch "addStudent" if exists
+#		And I pause briefly for demonstration purposes
+#		Then I navigate back
+
+#	When I touch "Cancel" if exists
+#	And I pause briefly for demonstration purposes
+
+
+#Scenario: Professor should be able to add assignment
+#	When I touch the table cell with label marked "Introduction to Scientific Computing"
+#	And I pause briefly for demonstration purposes	
+#	
+#	When I touch "addAssignment" if exists
+#		And I pause briefly for demonstration purposes
+#		When I touch the button marked "Add"
+#			Then I wait to see "Must Enter a Name"
+#		
 		
-		
-	

@@ -99,13 +99,14 @@
         [self setClassTimes:self.currCourse.class_times];
     }
     
-    
+    /*
     if (assignmentController == nil) {
         NSLog(@"Setting the assignment Controller properly");
         assignmentController = [[AssignmentTableViewController alloc] init];
     }
     [self.assignmentTable setDataSource:assignmentController];
     assignmentController.view = assignmentController.tableView;
+    */
 }
 
 - (void) setClassTimes:(NSString *)times
