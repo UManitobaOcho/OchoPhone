@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    if(self.isProf == YES) {
+    if([self.isProf  isEqual: @YES]) {
         self.UpdateButton.enabled = YES;
         self.courseName.enabled = YES;
         self.courseNumber.enabled = YES;
@@ -93,6 +93,13 @@
         [_online setOn:NO animated:NO];
         [self setClassTimes:self.currCourse.class_times];
     }
+    
+    
+    if (assignmentController == nil) {
+        assignmentController = [[AssignmentTableViewController alloc] init];
+    }
+    [self.assignmentTable setDataSource:assignmentController];
+    assignmentController.view = assignmentController.tableView;
 }
 
 - (void) setClassTimes:(NSString *)times

@@ -17,6 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddButton;
 
-@property bool *isProf;
+@property NSNumber *isProf;
 
 @end
