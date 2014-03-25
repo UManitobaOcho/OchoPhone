@@ -66,8 +66,14 @@
     NSLog(@"%@\n", key);
     NSDate *dueDate = [assignmentsDict objectForKey:key];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    NSString *formattedDateString = [dateFormatter stringFromDate:dueDate];
+    
     [cell.textLabel setText:key];
-    [cell.detailTextLabel setText:dueDate.accessibilityValue];
+    [cell.detailTextLabel setText:
+            [NSString stringWithFormat:@"Due to %@.",formattedDateString]];
     return cell;
 }
 
