@@ -30,6 +30,7 @@
     [super viewDidLoad];
     [ComInterface sharedInstance].delegate = self;
     [self.tableView setDataSource:self]; [self.tableView setDelegate:self];
+    
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
     self.students = [[NSMutableArray alloc] init];
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:self.currCourse.course_id, @"course", nil];
@@ -40,6 +41,7 @@
     
 	// Do any additional setup after loading the view.
 }
+
 - (void)studentAdd:(NSArray *)response rowCount:(NSInteger)rowCount
 {
     NSLog(@"Adding student to table");
@@ -61,12 +63,12 @@
 {
     return 1;
 }
-//
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.students count];
 }
-//
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCell"];
@@ -99,6 +101,7 @@
     
     
 }
+
 - (void)sumbitStudent:(NSDictionary *) data
 {
     [ComInterface sharedInstance].delegate = self;
@@ -108,6 +111,7 @@
     NSLog(@"successful sending data to server");
     
 }
+
 - (void)receivedPacket:(id)packet
 { 
     if([packet[@"name"] isEqual: @"foundStudNotInCourse"])

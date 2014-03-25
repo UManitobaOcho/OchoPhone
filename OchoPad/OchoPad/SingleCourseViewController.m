@@ -27,7 +27,12 @@
     else if([segue.identifier isEqualToString:@"RemoveStudentToCourse"]){
         RemoveStudentToCourseViewController *controller = (RemoveStudentToCourseViewController *)segue.destinationViewController;
         controller.currCourse = self.currCourse;
+    } /*
+    else if([segue.identifier isEqualToString:@"GetAssignmentsForCourse"]){
+        AssignmentTableViewController *controller = (AssignmentTableViewController *)segue.destinationViewController;
+        controller.currCourse = self.currCourse;
     }
+       */
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -96,6 +101,7 @@
     
     
     if (assignmentController == nil) {
+        NSLog(@"Setting the assignment Controller properly");
         assignmentController = [[AssignmentTableViewController alloc] init];
     }
     [self.assignmentTable setDataSource:assignmentController];
