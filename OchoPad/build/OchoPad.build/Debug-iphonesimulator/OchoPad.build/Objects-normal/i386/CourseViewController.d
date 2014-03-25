@@ -11,5 +11,4 @@ dependencies: \
   /Users/TigerDon/Desktop/OchoPhone/OchoPad/extern/socket.IO-objc/SocketIOTransport.h \
   /Users/TigerDon/Desktop/OchoPhone/OchoPad/OchoPad/ComInterface.h \
   /Users/TigerDon/Desktop/OchoPhone/OchoPad/extern/socket.IO-objc/SocketIOPacket.h \
-  /Users/TigerDon/Desktop/OchoPhone/OchoPad/OchoPad/RemoveStudentToCourseViewController.h \
-  /Users/TigerDon/Desktop/OchoPhone/OchoPad/OchoPad/AssignmentTableViewController.h
+  /Users/TigerDon/Desktop/OchoPhone/OchoPad/OchoPad/RemoveStudentToCourseViewController.h
