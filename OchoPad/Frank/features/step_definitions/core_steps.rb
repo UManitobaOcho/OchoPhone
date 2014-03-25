@@ -12,6 +12,14 @@ Then /^I should see a table view label with the text "([^"]*)"$/ do |expected_te
 	check_element_exists( "view:'UITableViewLabel' text:'#{expected_text}'" )
 end
 
+Then /^I wait to see a label marked "([^\"]*)"$/ do |expected_mark|
+  quote = get_selector_quote(expected_mark)
+  wait_until( :timeout => 30, :message => "waited to see a label marked #{quote}#{expected_mark}#{quote}" ) {
+    element_exists( "UILabel marked:#{quote}#{expected_mark}#{quote}" )
+  }
+end
+
+
 # -- touch -- #
 
 # table cells
@@ -51,6 +59,11 @@ When /^I delete (\d+) characters from the text field with label "([^"]*)" using 
 end
 
 # -- misc -- #
+
+Then /^I navigate back$/ do
+	touch( "navigationItemButtonView" )
+	wait_for_nothing_to_be_animating
+end
 
 When /^I pause briefly for demonstration purposes$/ do
 	sleep 1.5

@@ -8,6 +8,6 @@ Feature: Launching my app using iPad idioms
 #	Then I should see a label with the text "Yearning To Know"
 #	Then I should see a button label with the text "Professor"
 #	Then I should see a button label with the text "Student"
-
+#
 #Given I quit the simulator
 	

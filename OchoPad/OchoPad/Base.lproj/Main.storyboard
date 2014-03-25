@@ -204,6 +204,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="9Sc-Fp-Vhf">
                                 <rect key="frame" x="722" y="131" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="addAssignment"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <connections>
                                     <segue destination="QfN-mY-YpG" kind="push" identifier="ProfAddAssignment" id="PK2-nH-4g7"/>
@@ -403,6 +404,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="fFS-xX-OVe">
                                 <rect key="frame" x="722" y="163" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="addStudents"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <connections>
                                     <segue destination="6ZU-UM-ch1" kind="push" identifier="AddStudentToCourse" id="LYH-BI-3al"/>
@@ -429,6 +431,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="NHh-5a-3h8">
                                 <rect key="frame" x="722" y="100" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="GradeInfo"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <connections>
                                     <segue destination="f8K-c0-0xD" kind="push" id="xtj-uv-5vh"/>
@@ -444,6 +447,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="b6f-9A-mKb">
                                 <rect key="frame" x="722" y="195" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="classListInfo"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <connections>
                                     <segue destination="EqB-uZ-VRh" kind="push" identifier="RemoveStudentToCourse" id="h96-fE-suH"/>
