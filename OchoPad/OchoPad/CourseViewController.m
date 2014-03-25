@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    if(self.isProf == YES) {
+    if([self.isProf  isEqual: @YES]) {
         self.AddButton.enabled = YES;
         NSLog(@"PROFESSOR");
     } else {

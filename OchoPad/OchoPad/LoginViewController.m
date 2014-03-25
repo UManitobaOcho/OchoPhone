@@ -28,12 +28,12 @@
     if([segue.identifier isEqualToString:@"ProfessorSegue"]){
         CourseViewController *controller = (CourseViewController *)segue.destinationViewController;
         controller.courses = self.courses;
-        controller.isProf = YES;
+        controller.isProf = @YES;
     }
     else if([segue.identifier isEqualToString:@"StudentSegue"]){
         CourseViewController *controller = (CourseViewController *)segue.destinationViewController;
         controller.courses = self.courses;
-        controller.isProf = NO;
+        controller.isProf = @NO;
     }
 }
 

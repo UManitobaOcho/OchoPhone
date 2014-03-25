@@ -11,6 +11,7 @@
 #import "ProfAddAssignmentViewController.h"
 #import "AddStudentToCourseViewController.h"
 #import "RemoveStudentToCourseViewController.h"
+#import "AssignmentTableViewController.h"
 
 @class SingleCourseViewController;
 
@@ -19,12 +20,15 @@
 - (void)singleCourseViewController:(SingleCourseViewController *)controller didUpdateCourse:(Course *)course;
 @end
 
-@interface SingleCourseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SingleCourseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+    AssignmentTableViewController *assignmentController;
+}
 
 @property(nonatomic) Course *currCourse;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *UpdateButton;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *assignmentTable;
 @property (nonatomic, strong) NSArray *mainArray;
 
 @property (strong, nonatomic) IBOutlet UITextField *courseName;
@@ -52,7 +56,7 @@
 
 @property (nonatomic, weak) id <SingleCourseViewControllerDelegate> delegate;
 
-@property bool *isProf;
+@property NSNumber *isProf;
 
 - (NSString *)getClassTimes:(UITableView *)table;
 - (bool)validateCourseFields;
