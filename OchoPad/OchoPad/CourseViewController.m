@@ -40,9 +40,8 @@
     }
     
     //need to set delegate of singleton so that it may callback to the current controller
-     [ComInterface sharedInstance].delegate = self;
+    [ComInterface sharedInstance].delegate = self;
     _mySocketIO = [ComInterface sharedInstance].socketIO;
-    
     [_mySocketIO sendEvent:@"getCourses" withData:@1];
     
     

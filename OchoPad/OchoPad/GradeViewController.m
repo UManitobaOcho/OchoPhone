@@ -39,7 +39,7 @@
     
     // send getSubmittedAssignment event with enrolled_id = 1
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
-    [mySocketIO sendEvent:@"getSubmittedAssignment" withData:@"1"];
+    [mySocketIO sendEvent:@"getSubmittedAssignment" withData: @1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,20 +48,42 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)displayGrade : (NSArray *)response
+- (void)displayAssignmentGrade : (NSArray *)response
 {
-    NSLog(@"display Grade to GradeInputBox");
+    NSString *outputStr = [NSString stringWithFormat:@"%@\n%@\n", @"Assignment Grade\n", @"Assignment Name\t\tMarks"];
     
     // extract assignment_name & grade values from response object
-    NSDictionary *object = [[response lastObject] lastObject];
-    NSString *grade = [object objectForKey:@"grade"];
-    NSString *assignmentName = [object objectForKey:@"assignment_name"];
-    
-    // append assignmentName & grade value to outputStr
-    NSString *outputStr = [NSString stringWithFormat:@"%@\n%@\n%@\t\t\t%@", @"Assignment Grade\n", @"Assignment Name\t\tMarks", assignmentName, grade];
+    NSArray *object = [response lastObject];
+    for (NSUInteger i = 0; i < [object count]; i++) {
+        NSString *grade = [[object objectAtIndex:i] objectForKey:@"grade"];
+        NSString *assignmentName = [[object objectAtIndex:i] objectForKey:@"assignment_name"];
+        
+        outputStr = [NSString stringWithFormat:@"%@%@\t\t\t%@\n", outputStr, assignmentName, grade];
+    }
     
     // put the outputStr inside GradeInputBox
     self.GradeInputBox.text = outputStr;
+    
+    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+    [mySocketIO sendEvent:@"getCompletedTests" withData: @1];
+}
+
+- (void)displayTestMarks : (NSArray *)response
+{
+    NSString *outputStr = [NSString stringWithFormat:@"%@\n\n%@\n%@\n", self.GradeInputBox.text, @"Test Marks\n", @"Test ID\t\tMarks"];
+    
+    // extract assignment_name & grade values from response object
+    NSArray *object = [response lastObject];
+    for (NSUInteger i = 0; i < [object count]; i++) {
+        NSString *grade = [[object objectAtIndex:i] objectForKey:@"grade"];
+        NSString *testID = [[object objectAtIndex:i] objectForKey:@"test_id"];
+        
+        outputStr = [NSString stringWithFormat:@"%@%@\t\t\t%@\n", outputStr, testID, grade];
+    }
+    
+    // put the outputStr inside GradeInputBox
+    self.GradeInputBox.text = outputStr;
+
 }
 
 - (void)receivedPacket:(id)packet
@@ -70,11 +92,14 @@
     
     /* Needed for multiple return records */
     //NSArray *response = packet[@"args"][@"rows"];
-    //NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
+    //NSInteger count = [[respoense lastObject] count];
+    //NSLog(@"%d", count);
     
     if([packet[@"name"] isEqual: @"foundSubmittedAssignment"])
     {
-        [self displayGrade:respoense];
+        [self displayAssignmentGrade:respoense];
+    } else if([packet[@"name"] isEqual: @"foundCompletedTests"]) {
+        [self displayTestMarks:respoense];
     }
 }
 
