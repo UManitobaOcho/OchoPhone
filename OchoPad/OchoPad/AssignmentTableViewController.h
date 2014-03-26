@@ -10,11 +10,9 @@
 #import "Course.h"
 #import "SocketIO.h"
 #import "ComInterface.h"
-#import "ProfAssignment.h"
 
 @interface AssignmentTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, SocketIOConnectionDelegate> {
     NSDictionary *assignmentsDict;
     NSMutableArray *assignments;
 }
-@property(nonatomic) Course *currCourse;
 @end

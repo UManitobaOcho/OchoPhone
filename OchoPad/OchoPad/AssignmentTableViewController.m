@@ -9,9 +9,6 @@
 #import "AssignmentTableViewController.h"
 #import "ProfAssignment.h"
 
-@interface AssignmentTableViewController()
-
-@end
 
 @implementation AssignmentTableViewController
 
@@ -24,29 +21,29 @@
     return self;
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    
     NSString *keyA = @"Assignment 1";
     NSString *keyB = @"Assignment 2";
     
     assignmentsDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                            [[NSDate alloc] init], keyA,
-                            [[NSDate alloc] initWithTimeIntervalSinceNow:(24*60*60)], keyB, nil];
-    
+                       [[NSDate alloc] init], keyA,
+                       [[NSDate alloc] initWithTimeIntervalSinceNow:(24*60*60)], keyB, nil];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     
     [ComInterface sharedInstance].delegate = self;
     SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
-    // cheating
-    
-    //self.currCourse = [[Course alloc] init];
-    //self.currCourse.course_id = @"1";
     
     assignments = [[NSMutableArray alloc] init];
     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
-                       @1, @"course_id", nil];
+                          @1, @"course_id", nil];
     
     [mySocketIO sendEvent:@"getAssignmentsForCourse" withData:data];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,35 +59,37 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [assignments count];
+    return [assignmentsDict count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"AssignmentsCell";
+    static NSString *cellIdentifier = @"AssignmentCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    {
-        NSArray *keysList = [assignmentsDict allKeys];
-        NSLog(@"%@\n", keysList);
-        NSString *key = [keysList objectAtIndex:indexPath.row];
-        NSLog(@"%@\n", key);
-        NSDate *dueDate = [assignmentsDict objectForKey:key];
-        
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-        NSString *formattedDateString = [dateFormatter stringFromDate:dueDate];
     
-        [cell.textLabel setText:key];
-        [cell.detailTextLabel setText:formattedDateString];
-    }
+    /*
+     //5.1 you do not need this if you have set SettingsCell as identifier in the storyboard (else you can remove the comments on this code)
+     if (cell == nil)
+     {
+     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+     }
+     */
     
-    ProfAssignment *assignment = assignments[indexPath.row];
-    [cell.textLabel setText:assignment.AssignmentName];
-    [cell.detailTextLabel setText:assignment.DueDate];
+    NSArray *keysList = [assignmentsDict allKeys];
+    NSLog(@"%@\n", keysList);
+    NSString *key = [keysList objectAtIndex:indexPath.row];
+    NSLog(@"%@\n", key);
+    NSDate *dueDate = [assignmentsDict objectForKey:key];
     
-    //[NSString stringWithFormat:@"Due to %@.",formattedDateString]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    NSString *formattedDateString = [dateFormatter stringFromDate:dueDate];
+    
+    [cell.textLabel setText:key];
+    [cell.detailTextLabel setText:
+     [NSString stringWithFormat:@"Due to %@.",formattedDateString]];
     return cell;
 }
 
@@ -143,10 +142,62 @@
         NSLog(@"received assignment >>> data: %@", assignment);
         NSLog(@"received response >>> data: %d", [assignments count]);
         /*
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([assignments count] - 1) inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        */
+         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([assignments count] - 1) inSection:0];
+         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+         */
     }
 }
+
+
+/*
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
+
+/*
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
+
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
+ */
 
 @end

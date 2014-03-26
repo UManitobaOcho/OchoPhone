@@ -11,7 +11,7 @@
 #import "ProfAddAssignmentViewController.h"
 #import "AddStudentToCourseViewController.h"
 #import "RemoveStudentToCourseViewController.h"
-//#import "AssignmentTableViewController.h"
+#import "AssignmentTableViewController.h"
 
 @class SingleCourseViewController;
 
@@ -21,7 +21,7 @@
 @end
 
 @interface SingleCourseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
-    //AssignmentTableViewController *assignmentController;
+    AssignmentTableViewController *assignmentController;
 }
 
 @property(nonatomic) Course *currCourse;
