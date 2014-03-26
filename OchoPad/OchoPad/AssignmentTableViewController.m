@@ -7,6 +7,7 @@
 //
 
 #import "AssignmentTableViewController.h"
+#import "ProfAssignment.h"
 
 
 @implementation AssignmentTableViewController
@@ -28,6 +29,21 @@
     assignmentsDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                             [[NSDate alloc] init], keyA,
                             [[NSDate alloc] initWithTimeIntervalSinceNow:(24*60*60)], keyB, nil];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [ComInterface sharedInstance].delegate = self;
+    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+
+    assignments = [[NSMutableArray alloc] init];
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @1, @"course_id", nil];
+    
+    [mySocketIO sendEvent:@"getAssignmentsForCourse" withData:data];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +91,61 @@
     [cell.detailTextLabel setText:
             [NSString stringWithFormat:@"Due to %@.",formattedDateString]];
     return cell;
+}
+
+- (void)receivedPacket:(id)packet
+{
+    NSLog(@"receivedPacketAssigments >>>>> ");
+    NSLog(@"got Packet:\n%@", packet);
+    
+    NSArray *response = packet[@"args"][0];
+    NSLog(@"\ngot Response:\n%@", response);
+    //NSInteger count = [(NSNumber *)[packet[@"args"][0] objectForKey:@"rowCount"] integerValue];
+    NSInteger count = [response count];
+    
+    NSLog(@"Response count:\n%d", count);
+    
+    if([packet[@"name"] isEqual: @"foundAssignments"])
+    {
+        [self fillAssignmentList:response rowCount:count];
+    }
+    
+    //else if([packet[@"name"] isEqual: @"ProfAssignmentSubmitted"])
+    //{
+    //  NSLog(@"Professor Assignment Added Successfully");
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    //[self.navigationController popViewControllerAnimated:YES];
+    //}
+}
+
+- (void)fillAssignmentList:(NSArray *)response rowCount:(NSInteger)rowCount
+{
+    NSIndexPath *indexP;
+    
+    while([assignments count] > 0) {
+        indexP = [NSIndexPath indexPathForRow:([assignments count] - 1) inSection:0];
+        [assignments removeObjectAtIndex:0];
+        [[self tableView] deleteRowsAtIndexPaths:@[indexP] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    for (int i = 0; i < rowCount; i++) {
+        NSLog(@"received response >>> data: %@", response[i]);
+        
+        ProfAssignment *assignment = [[ProfAssignment alloc] init];
+        assignment.AssignmentName = response[i][@"assignment_name"];
+        assignment.DueDate = response[i][@"due_date"];
+        assignment.ReleaseDate = response[i][@"viewable_date"];
+        [assignments addObject:assignment];
+        
+        
+        NSLog(@"Assignment name: %@", assignment.AssignmentName);
+        NSLog(@"received assignment >>> data: %@", assignment);
+        NSLog(@"received response >>> data: %d", [assignments count]);
+        /*
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([assignments count] - 1) inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        */
+    }
 }
 
 

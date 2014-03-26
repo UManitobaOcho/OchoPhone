@@ -11,7 +11,8 @@
 #import "SocketIO.h"
 #import "ComInterface.h"
 
-@interface AssignmentTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface AssignmentTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, SocketIOConnectionDelegate> {
     NSDictionary *assignmentsDict;
+    NSMutableArray *assignments;
 }
 @end
