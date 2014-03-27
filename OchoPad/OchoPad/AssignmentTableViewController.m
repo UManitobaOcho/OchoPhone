@@ -35,14 +35,14 @@
 {
     [super viewDidLoad];
     
-    [ComInterface sharedInstance].delegate = self;
-    SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
+    //[ComInterface sharedInstance].delegate = self;
+    //SocketIO *mySocketIO = [ComInterface sharedInstance].socketIO;
     
-    assignments = [[NSMutableArray alloc] init];
-    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @1, @"course_id", nil];
+    //assignments = [[NSMutableArray alloc] init];
+    //NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+     //                     @1, @"course_id", nil];
     
-    [mySocketIO sendEvent:@"getAssignmentsForCourse" withData:data];
+    //[mySocketIO sendEvent:@"getAssignmentsForCourse" withData:data];
     
 }
 
